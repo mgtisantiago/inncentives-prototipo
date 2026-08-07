@@ -1,0 +1,67 @@
+/* Reglas responsive compartidas por todas las páginas del sitio.
+   Depende de: #page-root en el contenedor raíz y de las clases
+   .rw (fila con gutters), .g2/.g3/.g4 (grids), .cta-actions (botonera). */
+
+@media (max-width: 1279px){
+  #page-root{width:100% !important;max-width:100% !important}
+  #page-root section{padding-left:56px !important;padding-right:56px !important}
+  .rw{padding-left:56px !important;padding-right:56px !important}
+  #page-root h1,#page-root h2,#page-root h3,#page-root p,#page-root span{max-width:100% !important}
+  #page-root img{max-width:100%}
+}
+
+@media (max-width: 1023px){
+  #page-root section{padding-left:32px !important;padding-right:32px !important;padding-top:72px !important;padding-bottom:76px !important}
+  .rw{padding-left:32px !important;padding-right:32px !important}
+  #page-root h1{font-size:44px !important}
+  #page-root h2{font-size:36px !important;line-height:1.18 !important}
+  #page-root h3{font-size:20px !important}
+  .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .only-lg{display:none !important}
+  .only-sm{display:flex !important}
+}
+
+@media (max-width: 767px){
+  #page-root section{padding-left:24px !important;padding-right:24px !important;padding-top:56px !important;padding-bottom:60px !important}
+  .rw{padding-left:24px !important;padding-right:24px !important}
+  #page-root h1{font-size:34px !important;line-height:1.12 !important;letter-spacing:-.025em !important}
+  #page-root h2{font-size:28px !important;line-height:1.2 !important}
+  #page-root h3{font-size:18px !important}
+  .g2,.g3,.g4{grid-template-columns:minmax(0,1fr) !important}
+  .cta-actions,.hero-cta{flex-direction:column !important;align-items:stretch !important;width:100% !important;gap:10px !important}
+  .cta-actions a,.hero-cta a{text-align:center;padding:17px 20px !important;font-size:15px !important;white-space:normal !important}
+  .cta-actions{max-width:420px;margin-left:auto;margin-right:auto}
+}
+
+@media (max-width: 479px){
+  #page-root section{padding-left:16px !important;padding-right:16px !important}
+  .rw{padding-left:16px !important;padding-right:16px !important}
+}
+
+/* split heroes */
+/* Cualquier fila partida con hijos de ancho fijo pasa a columna en tablet. */
+@media (max-width: 1279px){
+  #page-root .split{flex-wrap:wrap !important;padding:32px !important}
+}
+@media (max-width: 1023px){
+  #page-root .split{flex-direction:column !important;align-items:stretch !important;gap:36px !important}
+  /* Texto y visual comparten ancho y ejes desde tablet hacia abajo. */
+  #page-root .split > *,#page-root .split-fit{width:100% !important;max-width:100% !important;flex:0 0 auto !important;margin-left:0 !important;margin-right:0 !important}
+  /* el panel refluye: nada de escalado, el texto conserva su tamaño real */
+  #page-root .split-fit{zoom:1 !important;height:auto !important;min-height:0 !important}
+  #page-root .split-fit > *{width:100% !important;box-sizing:border-box}
+}
+
+/* Paneles de ancho fijo (visuales con hijos posicionados): se escalan,
+   no se estiran, para no romper su composición interna. */
+/* zoom (no transform): el alto real se recalcula, así nada se encima. */
+@media (max-width: 767px){
+  /* Texto y visual comparten el mismo ancho y los mismos márgenes. */
+  #page-root .split{padding:20px !important}
+  #page-root .split > *,#page-root .split-fit{width:100% !important;max-width:100% !important;margin-left:0 !important;margin-right:0 !important}
+}
+@media (max-width: 599px){
+  /* rejillas internas del visual: una sola columna en teléfono */
+  #page-root .split-fit [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) !important}
+  #page-root .split-fit [style*="min-height"]{min-height:0 !important}
+}
