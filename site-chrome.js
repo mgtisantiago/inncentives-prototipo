@@ -68,7 +68,7 @@
 <img src="${logo()}" alt="Inncentives" style="width:233px;height:28px;display:block">
 </a>
 <nav class="nav-desktop" style="display:flex;align-items:center;justify-content:center;flex:none;gap:26px;white-space:nowrap">${desktop}</nav>
-<div style="display:flex;align-items:center;gap:16px;flex:1 1 0;min-width:0;justify-content:flex-end">
+<div style="display:flex;align-items:center;gap:8px;flex:1 1 0;min-width:0;justify-content:flex-end">
 <a href="#login" class="nav-login" style="font:500 14px/1 'Inter',sans-serif;color:rgba(42,49,128,.7);white-space:nowrap;text-decoration:none">Iniciar sesión</a>
 <a href="#demo" class="nav-cta" style="font:600 12px/1 'Inter',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:13px 20px;white-space:nowrap;box-shadow:0 12px 24px -14px rgba(42,49,128,.9);text-decoration:none">Agendar demo</a>
 <button type="button" class="nav-burger" aria-label="Abrir menú" style="display:none;align-items:center;justify-content:center;width:36px;height:36px;flex:none;border:1px solid rgba(26,26,26,.14);border-radius:11px;background:#FFFFFF;cursor:pointer;padding:0">
