@@ -13,7 +13,7 @@
 <script src="./site-chrome.js"></script>
 <link rel="stylesheet" href="./responsive.css">
 <style>
-body{margin:0;background:#FFFFFF;font-family:'Inter',system-ui,sans-serif}
+body{margin:0;background:#FFFFFF;font-family:Inter,system-ui,sans-serif}
 a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 @keyframes rPulse{0%,100%{opacity:.3}50%{opacity:1}}
 @keyframes rFade{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
@@ -29,24 +29,24 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 }
 </style></helmet>
 
-<div id="page-root" style="position: relative; min-height: 100vh; background: #FFFFFF; font-family: 'Inter',sans-serif; display: flex; flex-direction: column; width: 1440px; max-width: 100%; margin: 0 auto">
+<div id="page-root" style="position: relative; min-height: 100vh; background: #FFFFFF; font-family: Inter,sans-serif; display: flex; flex-direction: column; width: 1440px; max-width: 100%; margin: 0 auto">
 
 
 <site-header active="soluciones" style="position:sticky;top:0;z-index:60;width:100%"></site-header>
 
 <section id="hero" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:56px 128px 0;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
-<h1 style="margin:0;max-width:900px;font:800 62px/1.08 'Inter',sans-serif;letter-spacing:-.03em;color:#1A1A1A;text-wrap:balance">Una plataforma, pensada para cada rol</h1>
-<p style="margin:0;max-width:900px;font:400 16px/1.6 'Inter',sans-serif;color:rgba(26,26,26,.72)">RevOps, Finanzas, Ventas y RRHH trabajan sobre la misma fuente de verdad, cada uno con la vista que necesita.</p>
+<h1 style="margin:0;max-width:900px;font:800 62px/1.08 Inter,sans-serif;letter-spacing:-.03em;color:#1A1A1A;text-wrap:balance">Una plataforma, pensada para cada rol</h1>
+<p style="margin:0;max-width:900px;font:400 16px/1.6 Inter,sans-serif;color:rgba(26,26,26,.72)">RevOps, Finanzas, Ventas y RRHH trabajan sobre la misma fuente de verdad, cada uno con la vista que necesita.</p>
 </section>
 
 <section id="soluciones" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:40px 128px 0;display:flex;flex-direction:column;gap:26px">
 
 <div style="display:flex;justify-content:center">
 <div id="filtros" style="display:flex;align-items:center;gap:4px;background:#F5F3EF;border-radius:999px;padding:5px">
-<button type="button" data-cat="revops" onClick="{{ pick }}" style="border:0;cursor:pointer;font:600 13px/1 'Inter',sans-serif;color:#1A1A1A;background:#FFFFFF;border-radius:999px;padding:10px 18px;box-shadow:0 2px 8px -4px rgba(26,26,26,.45);transition:background .2s ease, color .2s ease">RevOps</button>
-<button type="button" data-cat="finanzas" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'Inter',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Finanzas</button>
-<button type="button" data-cat="ventas" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'Inter',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Ventas</button>
-<button type="button" data-cat="rrhh" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'Inter',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">RRHH</button>
+<button type="button" data-cat="revops" onClick="{{ pick }}" style="border:0;cursor:pointer;font:600 13px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border-radius:999px;padding:10px 18px;box-shadow:0 2px 8px -4px rgba(26,26,26,.45);transition:background .2s ease, color .2s ease">RevOps</button>
+<button type="button" data-cat="finanzas" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 Inter,sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Finanzas</button>
+<button type="button" data-cat="ventas" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 Inter,sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Ventas</button>
+<button type="button" data-cat="rrhh" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 Inter,sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">RRHH</button>
 </div>
 </div>
 
@@ -54,25 +54,25 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <sc-if value="{{ isRevops }}" hint-placeholder-val="{{ true }}">
 <div style="display:flex;flex-direction:column;gap:18px;flex:1;min-width:0;animation:rFade .4s ease-out">
-<span style="font:700 12.5px/1.4 'Inter',sans-serif;letter-spacing:.04em;color:#F59B1B;text-transform:uppercase">RevOps / Administradores de compensación</span>
-<h2 style="margin:0;font:500 30px/1.28 'Inter',sans-serif;color:#1A1A1A;text-wrap:pretty">Diseña planes sin depender de desarrollo</h2>
-<p style="margin:0;font:400 15px/1.65 'Inter',sans-serif;color:rgba(26,26,26,.72)">Configura reglas y componentes ilimitados para cualquier grupo de vendedores, producto o territorio, con capacidades extraordinarias de cálculo y sin escribir una sola línea de código.</p>
+<span style="font:700 12.5px/1.4 Inter,sans-serif;letter-spacing:.04em;color:#F59B1B;text-transform:uppercase">RevOps / Administradores de compensación</span>
+<h2 style="margin:0;font:500 30px/1.28 Inter,sans-serif;color:#1A1A1A;text-wrap:pretty">Diseña planes sin depender de desarrollo</h2>
+<p style="margin:0;font:400 15px/1.65 Inter,sans-serif;color:rgba(26,26,26,.72)">Configura reglas y componentes ilimitados para cualquier grupo de vendedores, producto o territorio, con capacidades extraordinarias de cálculo y sin escribir una sola línea de código.</p>
 <div style="display:flex;flex-direction:column;gap:16px;padding-top:6px">
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Modelador visual de planes y reglas de pago</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Modelador visual de planes y reglas de pago</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Clonación de planes entre periodos o equipos</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Clonación de planes entre periodos o equipos</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Programación de eventos y motor de cálculo automatizado</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Programación de eventos y motor de cálculo automatizado</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Integración de KPIs, metas grupales y componentes ilimitados</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Integración de KPIs, metas grupales y componentes ilimitados</span>
 </div>
 </div>
 </div>
@@ -80,25 +80,25 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <sc-if value="{{ isFinanzas }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;flex-direction:column;gap:18px;flex:1;min-width:0;animation:rFade .4s ease-out">
-<span style="font:700 12.5px/1.4 'Inter',sans-serif;letter-spacing:.04em;color:#F59B1B;text-transform:uppercase">FINANZAS</span>
-<h2 style="margin:0;font:500 30px/1.28 'Inter',sans-serif;color:#1A1A1A;text-wrap:pretty">Cierra el ciclo sin reconciliaciones de última hora</h2>
-<p style="margin: 0; font: 400 15px/1.65 'Inter',sans-serif; color: rgba(26,26,26,.72); position: relative">Trazabilidad de cada cálculo, exportación directa a los sitemas de pago y auditoría de principio a fin. El cierre de comisiones deja de ser un cuello de botella mensual.</p>
+<span style="font:700 12.5px/1.4 Inter,sans-serif;letter-spacing:.04em;color:#F59B1B;text-transform:uppercase">FINANZAS</span>
+<h2 style="margin:0;font:500 30px/1.28 Inter,sans-serif;color:#1A1A1A;text-wrap:pretty">Cierra el ciclo sin reconciliaciones de última hora</h2>
+<p style="margin: 0; font: 400 15px/1.65 Inter,sans-serif; color: rgba(26,26,26,.72); position: relative">Trazabilidad de cada cálculo, exportación directa a los sitemas de pago y auditoría de principio a fin. El cierre de comisiones deja de ser un cuello de botella mensual.</p>
 <div style="display:flex;flex-direction:column;gap:16px;padding-top:6px">
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Exportación directa a los sistemas de pago</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Exportación directa a los sistemas de pago</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Auditoría de cada cálculo realizado</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Auditoría de cada cálculo realizado</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Reportes de cumplimiento y cierre por periodo</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Reportes de cumplimiento y cierre por periodo</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Firma y aprobación de nómina integradas al flujo</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Firma y aprobación de nómina integradas al flujo</span>
 </div>
 </div>
 </div>
@@ -106,25 +106,25 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <sc-if value="{{ isVentas }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;flex-direction:column;gap:18px;flex:1;min-width:0;animation:rFade .4s ease-out">
-<span style="font:700 12.5px/1.4 'Inter',sans-serif;letter-spacing:.04em;color:#F59B1B;text-transform:uppercase">Ventas / Fuerza comercial</span>
-<h2 style="margin:0;font:500 30px/1.28 'Inter',sans-serif;color:#1A1A1A;text-wrap:pretty">Consulta tu compensación al día</h2>
-<p style="margin:0;font:400 15px/1.65 'Inter',sans-serif;color:rgba(26,26,26,.72)">Entender cuánto se puedo comisionar, el cumplimiento de objetivos y tener un pago efectivo en los tiempos esperados mantiene la motivación constante en todo el ciclo de ventas.&nbsp;</p>
+<span style="font:700 12.5px/1.4 Inter,sans-serif;letter-spacing:.04em;color:#F59B1B;text-transform:uppercase">Ventas / Fuerza comercial</span>
+<h2 style="margin:0;font:500 30px/1.28 Inter,sans-serif;color:#1A1A1A;text-wrap:pretty">Consulta tu compensación al día</h2>
+<p style="margin:0;font:400 15px/1.65 Inter,sans-serif;color:rgba(26,26,26,.72)">Entender cuánto se puedo comisionar, el cumplimiento de objetivos y tener un pago efectivo en los tiempos esperados mantiene la motivación constante en todo el ciclo de ventas.&nbsp;</p>
 <div style="display:flex;flex-direction:column;gap:16px;padding-top:6px">
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Estado de cuenta con pagos realizados, programados y pendientes</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Estado de cuenta con pagos realizados, programados y pendientes</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Gráficos de desempeño: cuota versus cumplimiento</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Gráficos de desempeño: cuota versus cumplimiento</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Consulta del plan y beneficios en un solo lugar</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Consulta del plan y beneficios en un solo lugar</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Notificaciones de pago en tiempo real</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Notificaciones de pago en tiempo real</span>
 </div>
 </div>
 </div>
@@ -132,25 +132,25 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <sc-if value="{{ isRrhh }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;flex-direction:column;gap:18px;flex:1;min-width:0;animation:rFade .4s ease-out">
-<span style="font:700 12.5px/1.4 'Inter',sans-serif;letter-spacing:.04em;color:#F59B1B;text-transform:uppercase">RRHH / Compensación y beneficios</span>
-<h2 style="margin:0;font:500 30px/1.28 'Inter',sans-serif;color:#1A1A1A;text-wrap:pretty">Estandariza cómo se paga en toda la empresa</h2>
-<p style="margin:0;font:400 15px/1.65 'Inter',sans-serif;color:rgba(26,26,26,.72)">Visibilidad centralizada sobre cómo se calcula y paga la compensación variable en cada equipo, con flujos de aprobación integrados para gestionar disputas sin fricción</p>
+<span style="font:700 12.5px/1.4 Inter,sans-serif;letter-spacing:.04em;color:#F59B1B;text-transform:uppercase">RRHH / Compensación y beneficios</span>
+<h2 style="margin:0;font:500 30px/1.28 Inter,sans-serif;color:#1A1A1A;text-wrap:pretty">Estandariza cómo se paga en toda la empresa</h2>
+<p style="margin:0;font:400 15px/1.65 Inter,sans-serif;color:rgba(26,26,26,.72)">Visibilidad centralizada sobre cómo se calcula y paga la compensación variable en cada equipo, con flujos de aprobación integrados para gestionar disputas sin fricción</p>
 <div style="display:flex;flex-direction:column;gap:16px;padding-top:6px">
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Reportes de cumplimiento de cuota por equipo</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Reportes de cumplimiento de cuota por equipo</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Configuración multi-empresa y multi-idioma</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Configuración multi-empresa y multi-idioma</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Gestión de disputas con flujos de aprobación integrados</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Gestión de disputas con flujos de aprobación integrados</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px">
-<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
-<span style="font:600 14px/1.45 'Inter',sans-serif;color:#1A1A1A;padding-top:3px">Integración con nómina y sistemas de RRHH</span>
+<span style="width:24px;height:24px;border-radius:7px;background:#F59B1B;color:#FFFFFF;font:700 12px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">✓</span>
+<span style="font:600 14px/1.45 Inter,sans-serif;color:#1A1A1A;padding-top:3px">Integración con nómina y sistemas de RRHH</span>
 </div>
 </div>
 </div>
@@ -159,61 +159,61 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <div class="split-fit" style="position: relative; width: 640px; height: 560px; flex: none; border-radius: 20px; background: #FAF8F5; border: 1px solid rgba(42,49,128,.12); box-shadow: 0 30px 60px -40px rgba(10,12,45,.45); overflow: hidden; box-sizing: border-box; padding: 26px 28px; display: flex; flex-direction: column; gap: 20px; border-width: 0px">
 <div style="display:flex;align-items:center;justify-content:space-between">
 <div style="display:flex;flex-direction:column;gap:5px">
-<span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.18em;color:#2A3180">{{ panelTag }}</span>
-<span style="font:600 15px/1.2 'Inter',sans-serif;color:#1A1A1A">{{ panelTitle }}</span>
+<span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.18em;color:#2A3180">{{ panelTag }}</span>
+<span style="font:600 15px/1.2 Inter,sans-serif;color:#1A1A1A">{{ panelTitle }}</span>
 </div>
-<span style="display:flex;align-items:center;gap:6px;font:600 10px/1 'Inter',sans-serif;color:#8A5200;background:rgba(245,155,27,.12);border:1px solid rgba(245,155,27,.28);border-radius:999px;padding:6px 11px"><span style="width:5px;height:5px;border-radius:50%;background:#F59B1B;animation:rPulse 1.6s ease-in-out infinite"></span>{{ panelBadge }}</span>
+<span style="display:flex;align-items:center;gap:6px;font:600 10px/1 Inter,sans-serif;color:#8A5200;background:rgba(245,155,27,.12);border:1px solid rgba(245,155,27,.28);border-radius:999px;padding:6px 11px"><span style="width:5px;height:5px;border-radius:50%;background:#F59B1B;animation:rPulse 1.6s ease-in-out infinite"></span>{{ panelBadge }}</span>
 </div>
 
 <sc-if value="{{ isRevops }}" hint-placeholder-val="{{ true }}">
 <div style="flex:1;display:flex;flex-direction:column;gap:16px;animation:rFade .4s ease-out">
 <div style="display:flex;flex-wrap:wrap;gap:8px">
-<span style="font:500 12px/1 'Inter',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:9px;padding:9px 13px;box-shadow:0 8px 16px -12px rgba(42,49,128,.5);animation:rSnap 5.4s ease-in-out infinite">Cuota</span>
-<span style="font:500 12px/1 'Inter',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:9px;padding:9px 13px;box-shadow:0 8px 16px -12px rgba(42,49,128,.5);animation:rSnap 5.4s ease-in-out .4s infinite">Acelerador</span>
-<span style="font:500 12px/1 'Inter',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:9px;padding:9px 13px;box-shadow:0 8px 16px -12px rgba(42,49,128,.5);animation:rSnap 5.4s ease-in-out .8s infinite">Spiff</span>
-<span style="font:500 12px/1 'Inter',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:9px;padding:9px 13px;box-shadow:0 8px 16px -12px rgba(42,49,128,.5);animation:rSnap 5.4s ease-in-out 1.2s infinite">Territorio</span>
-<span style="font:500 12px/1 'Inter',sans-serif;color:rgba(26,26,26,.5);background:transparent;border:1px dashed rgba(42,49,128,.26);border-radius:9px;padding:9px 13px">+ 24 componentes</span>
+<span style="font:500 12px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:9px;padding:9px 13px;box-shadow:0 8px 16px -12px rgba(42,49,128,.5);animation:rSnap 5.4s ease-in-out infinite">Cuota</span>
+<span style="font:500 12px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:9px;padding:9px 13px;box-shadow:0 8px 16px -12px rgba(42,49,128,.5);animation:rSnap 5.4s ease-in-out .4s infinite">Acelerador</span>
+<span style="font:500 12px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:9px;padding:9px 13px;box-shadow:0 8px 16px -12px rgba(42,49,128,.5);animation:rSnap 5.4s ease-in-out .8s infinite">Spiff</span>
+<span style="font:500 12px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:9px;padding:9px 13px;box-shadow:0 8px 16px -12px rgba(42,49,128,.5);animation:rSnap 5.4s ease-in-out 1.2s infinite">Territorio</span>
+<span style="font:500 12px/1 Inter,sans-serif;color:rgba(26,26,26,.5);background:transparent;border:1px dashed rgba(42,49,128,.26);border-radius:9px;padding:9px 13px">+ 24 componentes</span>
 </div>
 <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch">
 <div style="border-radius:14px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
-<span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">REGLAS DEL PLAN</span>
+<span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">REGLAS DEL PLAN</span>
 <div style="display:flex;align-items:center;gap:9px;padding:13px 12px;border-radius:10px;border:1.5px solid rgba(245,155,27,.5);background:rgba(245,155,27,.09)">
-<span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.86)">Si logro &gt; 100 %</span>
-<span style="margin-left:auto;font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A">× 1.4</span>
+<span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.86)">Si logro &gt; 100 %</span>
+<span style="margin-left:auto;font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A">× 1.4</span>
 </div>
 <div style="display:flex;align-items:center;gap:9px;padding:13px 12px;border-radius:10px;border:1.5px solid rgba(42,49,128,.16);background:rgba(42,49,128,.03)">
-<span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.86)">Producto Premium</span>
-<span style="margin-left:auto;font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A">+ 3 %</span>
+<span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.86)">Producto Premium</span>
+<span style="margin-left:auto;font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A">+ 3 %</span>
 </div>
 <div style="display:flex;align-items:center;gap:9px;padding:13px 12px;border-radius:10px;border:1.5px solid rgba(42,49,128,.16);background:rgba(42,49,128,.03)">
-<span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.86)">Territorio Norte</span>
-<span style="margin-left:auto;font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A">+ 1.5 %</span>
+<span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.86)">Territorio Norte</span>
+<span style="margin-left:auto;font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A">+ 1.5 %</span>
 </div>
 <div style="display:flex;align-items:center;gap:9px;padding:13px 12px;border-radius:10px;border:1.5px dashed rgba(42,49,128,.2)">
-<span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.45)">arrastra otro componente</span>
+<span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.45)">arrastra otro componente</span>
 </div>
 <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px;padding-top:11px;border-top:1px solid rgba(42,49,128,.08)">
-<span style="font:400 11px/1.4 'Inter',sans-serif;color:rgba(26,26,26,.55);max-width:150px">Sin tickets a desarrollo: se publica desde aquí.</span>
-<span style="font:600 10.5px/1 'Inter',sans-serif;color:#8A5200;background:rgba(245,155,27,.12);border:1px solid rgba(245,155,27,.3);border-radius:999px;padding:7px 11px;white-space:nowrap">Publicar</span>
+<span style="font:400 11px/1.4 Inter,sans-serif;color:rgba(26,26,26,.55);max-width:150px">Sin tickets a desarrollo: se publica desde aquí.</span>
+<span style="font:600 10.5px/1 Inter,sans-serif;color:#8A5200;background:rgba(245,155,27,.12);border:1px solid rgba(245,155,27,.3);border-radius:999px;padding:7px 11px;white-space:nowrap">Publicar</span>
 </div>
 </div>
 <div style="border-radius:14px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
-<span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">CLONAR PLAN</span>
+<span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">CLONAR PLAN</span>
 <div style="display:flex;align-items:center;gap:10px">
-<div style="flex:1;border-radius:10px;background:#FAF8F5;border:1px solid rgba(42,49,128,.12);padding:14px 13px"><div style="font:500 10px/1 'Inter',sans-serif;color:rgba(26,26,26,.5)">ORIGEN</div><div style="font:600 12.5px/1.7 'Inter',sans-serif;color:#1A1A1A">Q2 · Norte</div></div>
-<span style="font:600 14px/1 'Inter',sans-serif;color:#F59B1B">→</span>
-<div style="flex:1;border-radius:10px;background:rgba(245,155,27,.1);border:1px solid rgba(245,155,27,.3);padding:14px 13px"><div style="font:500 10px/1 'Inter',sans-serif;color:#8A5200">DESTINO</div><div style="font:600 12.5px/1.7 'Inter',sans-serif;color:#1A1A1A">Q3 · Centro</div></div>
+<div style="flex:1;border-radius:10px;background:#FAF8F5;border:1px solid rgba(42,49,128,.12);padding:14px 13px"><div style="font:500 10px/1 Inter,sans-serif;color:rgba(26,26,26,.5)">ORIGEN</div><div style="font:600 12.5px/1.7 Inter,sans-serif;color:#1A1A1A">Q2 · Norte</div></div>
+<span style="font:600 14px/1 Inter,sans-serif;color:#F59B1B">→</span>
+<div style="flex:1;border-radius:10px;background:rgba(245,155,27,.1);border:1px solid rgba(245,155,27,.3);padding:14px 13px"><div style="font:500 10px/1 Inter,sans-serif;color:#8A5200">DESTINO</div><div style="font:600 12.5px/1.7 Inter,sans-serif;color:#1A1A1A">Q3 · Centro</div></div>
 </div>
 <div style="display:flex;flex-direction:column;gap:7px">
-<div style="display:flex;justify-content:space-between;font:500 10.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.6)"><span>Componentes copiados</span><span style="color:#1A1A1A">28 / 28</span></div>
+<div style="display:flex;justify-content:space-between;font:500 10.5px/1 Inter,sans-serif;color:rgba(26,26,26,.6)"><span>Componentes copiados</span><span style="color:#1A1A1A">28 / 28</span></div>
 <div style="height:5px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="height:100%;border-radius:99px;background:#F59B1B;transform-origin:left;animation:rRun 4s ease-out infinite"></div></div>
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;padding-top:2px">
-<div style="display:flex;align-items:center;gap:9px"><span style="width:16px;height:16px;border-radius:5px;background:rgba(245,155,27,.16);color:#8A5200;font:700 9px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none;animation:rCheck 4s ease-out infinite">✓</span><span style="font:500 11px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.72)">Cuotas reescaladas al nuevo periodo</span></div>
-<div style="display:flex;align-items:center;gap:9px"><span style="width:16px;height:16px;border-radius:5px;background:rgba(245,155,27,.16);color:#8A5200;font:700 9px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none;animation:rCheck 4s ease-out .3s infinite">✓</span><span style="font:500 11px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.72)">Aceleradores y spiffs heredados</span></div>
-<div style="display:flex;align-items:center;gap:9px"><span style="width:16px;height:16px;border-radius:5px;background:rgba(245,155,27,.16);color:#8A5200;font:700 9px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none;animation:rCheck 4s ease-out .6s infinite">✓</span><span style="font:500 11px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.72)">12 territorios reasignados</span></div>
+<div style="display:flex;align-items:center;gap:9px"><span style="width:16px;height:16px;border-radius:5px;background:rgba(245,155,27,.16);color:#8A5200;font:700 9px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none;animation:rCheck 4s ease-out infinite">✓</span><span style="font:500 11px/1.3 Inter,sans-serif;color:rgba(26,26,26,.72)">Cuotas reescaladas al nuevo periodo</span></div>
+<div style="display:flex;align-items:center;gap:9px"><span style="width:16px;height:16px;border-radius:5px;background:rgba(245,155,27,.16);color:#8A5200;font:700 9px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none;animation:rCheck 4s ease-out .3s infinite">✓</span><span style="font:500 11px/1.3 Inter,sans-serif;color:rgba(26,26,26,.72)">Aceleradores y spiffs heredados</span></div>
+<div style="display:flex;align-items:center;gap:9px"><span style="width:16px;height:16px;border-radius:5px;background:rgba(245,155,27,.16);color:#8A5200;font:700 9px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none;animation:rCheck 4s ease-out .6s infinite">✓</span><span style="font:500 11px/1.3 Inter,sans-serif;color:rgba(26,26,26,.72)">12 territorios reasignados</span></div>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px;padding-top:11px;border-top:1px solid rgba(42,49,128,.08)"><span style="font:600 11.5px/1.3 'Inter',sans-serif;color:#1A1A1A">Listo en 40 s</span><span style="font:500 11px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.5)">antes: 4 días</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px;padding-top:11px;border-top:1px solid rgba(42,49,128,.08)"><span style="font:600 11.5px/1.3 Inter,sans-serif;color:#1A1A1A">Listo en 40 s</span><span style="font:500 11px/1.3 Inter,sans-serif;color:rgba(26,26,26,.5)">antes: 4 días</span></div>
 </div>
 </div>
 </div>
@@ -222,26 +222,26 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <sc-if value="{{ isFinanzas }}" hint-placeholder-val="{{ false }}">
 <div style="flex:1;display:flex;flex-direction:column;gap:14px;animation:rFade .4s ease-out">
 <div style="display:flex;flex-direction:column;gap:9px;border-radius:14px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:16px">
-<div style="display:flex;align-items:center;justify-content:space-between"><span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">CIERRE DEL CICLO · JULIO</span><span style="font:600 11px/1 'Inter',sans-serif;color:#1A1A1A">1,284 registros</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between"><span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">CIERRE DEL CICLO · JULIO</span><span style="font:600 11px/1 Inter,sans-serif;color:#1A1A1A">1,284 registros</span></div>
 <div style="display:flex;flex-direction:column;gap:8px">
-<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font:500 10.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.6)"><span>Conciliación automática</span><span style="color:#1A1A1A">0 diferencias</span></div><div style="height:5px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="height:100%;border-radius:99px;background:#2A3180;transform-origin:left;animation:rRun 4.2s ease-out infinite"></div></div></div>
-<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font:500 10.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.6)"><span>Exportación a nómina</span><span style="color:#1A1A1A">SAP · listo</span></div><div style="height:5px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="height:100%;border-radius:99px;background:#F59B1B;transform-origin:left;animation:rRun 4.2s ease-out .6s infinite"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font:500 10.5px/1 Inter,sans-serif;color:rgba(26,26,26,.6)"><span>Conciliación automática</span><span style="color:#1A1A1A">0 diferencias</span></div><div style="height:5px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="height:100%;border-radius:99px;background:#2A3180;transform-origin:left;animation:rRun 4.2s ease-out infinite"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font:500 10.5px/1 Inter,sans-serif;color:rgba(26,26,26,.6)"><span>Exportación a nómina</span><span style="color:#1A1A1A">SAP · listo</span></div><div style="height:5px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="height:100%;border-radius:99px;background:#F59B1B;transform-origin:left;animation:rRun 4.2s ease-out .6s infinite"></div></div></div>
 </div>
 </div>
 <div style="flex:1;border-radius:14px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:16px;display:flex;flex-direction:column;gap:10px">
-<span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">RASTRO DE AUDITORÍA · MARIANA R.</span>
+<span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">RASTRO DE AUDITORÍA · MARIANA R.</span>
 <div style="display:flex;flex-direction:column">
-<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08)"><span style="width:7px;height:7px;border-radius:50%;background:#2A3180"></span><span style="font:500 11.5px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.8)">Venta CRM · Contrato 2091</span><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A">$62,750</span></div>
-<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(42,49,128,.4)"></span><span style="font:500 11.5px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.8)">Regla · cuota trimestral 92 %</span><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A">base 3 %</span></div>
-<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08);animation:rRow 4.2s ease-in-out infinite"><span style="width:7px;height:7px;border-radius:50%;background:#F59B1B"></span><span style="font:500 11.5px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.8)">Acelerador aplicado</span><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A">× 1.4</span></div>
-<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(42,49,128,.4)"></span><span style="font:500 11.5px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.8)">Spiff Producto Premium</span><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A">+$3,000</span></div>
-<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(42,49,128,.25)"></span><span style="font:500 11.5px/1.3 'Inter',sans-serif;color:rgba(26,26,26,.8)">Validación · Finanzas</span><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A">22 jul, 02:04</span></div>
-<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:12px 0 2px"><span style="width:7px;height:7px;border-radius:50%;background:#F59B1B"></span><span style="font:600 12px/1.3 'Inter',sans-serif;color:#1A1A1A">Comisión aprobada</span><span style="font:700 15px/1 'Inter',sans-serif;color:#1A1A1A">$41,300</span></div>
+<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08)"><span style="width:7px;height:7px;border-radius:50%;background:#2A3180"></span><span style="font:500 11.5px/1.3 Inter,sans-serif;color:rgba(26,26,26,.8)">Venta CRM · Contrato 2091</span><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A">$62,750</span></div>
+<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(42,49,128,.4)"></span><span style="font:500 11.5px/1.3 Inter,sans-serif;color:rgba(26,26,26,.8)">Regla · cuota trimestral 92 %</span><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A">base 3 %</span></div>
+<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08);animation:rRow 4.2s ease-in-out infinite"><span style="width:7px;height:7px;border-radius:50%;background:#F59B1B"></span><span style="font:500 11.5px/1.3 Inter,sans-serif;color:rgba(26,26,26,.8)">Acelerador aplicado</span><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A">× 1.4</span></div>
+<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(42,49,128,.4)"></span><span style="font:500 11.5px/1.3 Inter,sans-serif;color:rgba(26,26,26,.8)">Spiff Producto Premium</span><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A">+$3,000</span></div>
+<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(42,49,128,.08)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(42,49,128,.25)"></span><span style="font:500 11.5px/1.3 Inter,sans-serif;color:rgba(26,26,26,.8)">Validación · Finanzas</span><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A">22 jul, 02:04</span></div>
+<div style="display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;padding:12px 0 2px"><span style="width:7px;height:7px;border-radius:50%;background:#F59B1B"></span><span style="font:600 12px/1.3 Inter,sans-serif;color:#1A1A1A">Comisión aprobada</span><span style="font:700 15px/1 Inter,sans-serif;color:#1A1A1A">$41,300</span></div>
 </div>
 <div style="margin-top:auto;display:flex;gap:9px">
-<div style="flex:1;border-radius:10px;background:#FAF8F5;border:1px solid rgba(42,49,128,.1);padding:10px 12px"><div style="font:500 9px/1 'Inter',sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">RECONCILIACIÓN</div><div style="font:700 15px/1.6 'Inter',sans-serif;color:#1A1A1A">0 manual</div></div>
-<div style="flex:1;border-radius:10px;background:#FAF8F5;border:1px solid rgba(42,49,128,.1);padding:10px 12px"><div style="font:500 9px/1 'Inter',sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">TRAZABILIDAD</div><div style="font:700 15px/1.6 'Inter',sans-serif;color:#1A1A1A">100 %</div></div>
-<div style="flex:1;border-radius:10px;background:#FAF8F5;border:1px solid rgba(42,49,128,.1);padding:10px 12px"><div style="font:500 9px/1 'Inter',sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">CIERRE</div><div style="font:700 15px/1.6 'Inter',sans-serif;color:#1A1A1A">3 min</div></div>
+<div style="flex:1;border-radius:10px;background:#FAF8F5;border:1px solid rgba(42,49,128,.1);padding:10px 12px"><div style="font:500 9px/1 Inter,sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">RECONCILIACIÓN</div><div style="font:700 15px/1.6 Inter,sans-serif;color:#1A1A1A">0 manual</div></div>
+<div style="flex:1;border-radius:10px;background:#FAF8F5;border:1px solid rgba(42,49,128,.1);padding:10px 12px"><div style="font:500 9px/1 Inter,sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">TRAZABILIDAD</div><div style="font:700 15px/1.6 Inter,sans-serif;color:#1A1A1A">100 %</div></div>
+<div style="flex:1;border-radius:10px;background:#FAF8F5;border:1px solid rgba(42,49,128,.1);padding:10px 12px"><div style="font:500 9px/1 Inter,sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">CIERRE</div><div style="font:700 15px/1.6 Inter,sans-serif;color:#1A1A1A">3 min</div></div>
 </div>
 </div>
 </div>
@@ -250,19 +250,19 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <sc-if value="{{ isVentas }}" hint-placeholder-val="{{ false }}">
 <div style="flex:1;display:flex;flex-direction:column;gap:14px;animation:rFade .4s ease-out">
 <div style="border-radius:14px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:18px;display:flex;flex-direction:column;gap:12px">
-<span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">MI COMISIÓN AL DÍA</span>
+<span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">MI COMISIÓN AL DÍA</span>
 <div style="display:flex;align-items:flex-end;gap:14px">
-<span style="font:700 44px/1 'Inter',sans-serif;letter-spacing:-.04em;color:#1A1A1A">$41,300</span>
-<span style="font:500 12px/1.6 'Inter',sans-serif;color:rgba(26,26,26,.5)">MXN · Julio, día 22 de 31</span>
+<span style="font:700 44px/1 Inter,sans-serif;letter-spacing:-.04em;color:#1A1A1A">$41,300</span>
+<span style="font:500 12px/1.6 Inter,sans-serif;color:rgba(26,26,26,.5)">MXN · Julio, día 22 de 31</span>
 </div>
 <div style="display:flex;align-items:center;gap:10px">
 <div style="flex:1;height:6px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="height:100%;border-radius:99px;background:#F59B1B;transform-origin:left;animation:rRun 4.4s ease-out infinite"></div></div>
-<span style="font:600 11.5px/1 'Inter',sans-serif;color:#8A5200;white-space:nowrap">sin esperar el cierre de mes</span>
+<span style="font:600 11.5px/1 Inter,sans-serif;color:#8A5200;white-space:nowrap">sin esperar el cierre de mes</span>
 </div>
 </div>
 <div style="flex:1;display:grid;grid-template-columns:1.15fr 1fr;gap:14px">
 <div style="border-radius:14px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:16px;display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:center;justify-content:space-between"><span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">CUOTA VS CUMPLIMIENTO</span><span style="font:700 12px/1 'Inter',sans-serif;color:#8A5200">128 %</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between"><span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">CUOTA VS CUMPLIMIENTO</span><span style="font:700 12px/1 Inter,sans-serif;color:#8A5200">128 %</span></div>
 <div style="position:relative;flex:1;display:flex;align-items:flex-end;gap:8px;min-height:110px">
 <div style="position:absolute;left:0;right:0;bottom:32%;height:0;border-top:2px dashed #2A3180;opacity:.55;z-index:2"></div>
 <div style="flex:1;height:52%;border-radius:5px 5px 2px 2px;background:rgba(42,49,128,.16);transform-origin:bottom;animation:rRise 4.6s ease-out infinite"></div>
@@ -273,15 +273,15 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <div style="flex:1;height:94%;border-radius:5px 5px 2px 2px;background:#F59B1B;transform-origin:bottom;animation:rRise 4.6s ease-out .6s infinite"></div>
 <div style="flex:1;height:74%;border-radius:5px 5px 2px 2px;background:rgba(245,155,27,.4);transform-origin:bottom;animation:rRise 4.6s ease-out .72s infinite"></div>
 </div>
-<div style="display:flex;align-items:center;gap:8px"><span style="width:22px;height:0;border-top:1.5px dashed rgba(42,49,128,.4)"></span><span style="font:500 10.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.55)">cuota del periodo</span></div>
+<div style="display:flex;align-items:center;gap:8px"><span style="width:22px;height:0;border-top:1.5px dashed rgba(42,49,128,.4)"></span><span style="font:500 10.5px/1 Inter,sans-serif;color:rgba(26,26,26,.55)">cuota del periodo</span></div>
 </div>
 <div style="border-radius:14px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
-<span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">ESTADO DE CUENTA</span>
-<div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,49,128,.08);font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.75)"><span>Base</span><span style="color:#1A1A1A;font-weight:600">$26,400</span></div>
-<div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,49,128,.08);font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.75)"><span>Acelerador</span><span style="color:#1A1A1A;font-weight:600">+$11,900</span></div>
-<div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,49,128,.08);font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.75)"><span>Spiff Premium</span><span style="color:#1A1A1A;font-weight:600">+$3,000</span></div>
-<div style="display:flex;justify-content:space-between;padding:11px 0;font:600 12px/1 'Inter',sans-serif;color:#1A1A1A"><span>Total del periodo</span><span>$41,300</span></div>
-<div style="display:flex;align-items:center;gap:9px;padding:12px;border-radius:10px;background:rgba(245,155,27,.1);border:1px solid rgba(245,155,27,.28)"><span style="width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(245,155,27,.7);color:#8A5200;font:700 10px 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;flex:none">?</span><span style="font:600 11px/1.3 'Inter',sans-serif;color:#8A5200">cada peso, con su explicación</span></div>
+<span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">ESTADO DE CUENTA</span>
+<div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,49,128,.08);font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.75)"><span>Base</span><span style="color:#1A1A1A;font-weight:600">$26,400</span></div>
+<div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,49,128,.08);font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.75)"><span>Acelerador</span><span style="color:#1A1A1A;font-weight:600">+$11,900</span></div>
+<div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,49,128,.08);font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.75)"><span>Spiff Premium</span><span style="color:#1A1A1A;font-weight:600">+$3,000</span></div>
+<div style="display:flex;justify-content:space-between;padding:11px 0;font:600 12px/1 Inter,sans-serif;color:#1A1A1A"><span>Total del periodo</span><span>$41,300</span></div>
+<div style="display:flex;align-items:center;gap:9px;padding:12px;border-radius:10px;background:rgba(245,155,27,.1);border:1px solid rgba(245,155,27,.28)"><span style="width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(245,155,27,.7);color:#8A5200;font:700 10px Inter,sans-serif;display:flex;align-items:center;justify-content:center;flex:none">?</span><span style="font:600 11px/1.3 Inter,sans-serif;color:#8A5200">cada peso, con su explicación</span></div>
 </div>
 </div>
 </div>
@@ -290,33 +290,33 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <sc-if value="{{ isRrhh }}" hint-placeholder-val="{{ false }}">
 <div style="flex:1;display:flex;flex-direction:column;gap:14px;animation:rFade .4s ease-out">
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-<div style="border-radius:12px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:13px 14px"><div style="font:500 9px/1 'Inter',sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">EMPRESAS</div><div style="font:700 20px/1.5 'Inter',sans-serif;color:#1A1A1A">6</div></div>
-<div style="border-radius:12px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:13px 14px"><div style="font:500 9px/1 'Inter',sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">IDIOMAS</div><div style="font:700 20px/1.5 'Inter',sans-serif;color:#1A1A1A">ES · EN · PT</div></div>
-<div style="border-radius:12px;background:rgba(245,155,27,.1);border:1px solid rgba(245,155,27,.3);padding:13px 14px"><div style="font:500 9px/1 'Inter',sans-serif;letter-spacing:.12em;color:#8A5200">POLÍTICA ÚNICA</div><div style="font:700 20px/1.5 'Inter',sans-serif;color:#1A1A1A">100 %</div></div>
+<div style="border-radius:12px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:13px 14px"><div style="font:500 9px/1 Inter,sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">EMPRESAS</div><div style="font:700 20px/1.5 Inter,sans-serif;color:#1A1A1A">6</div></div>
+<div style="border-radius:12px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:13px 14px"><div style="font:500 9px/1 Inter,sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">IDIOMAS</div><div style="font:700 20px/1.5 Inter,sans-serif;color:#1A1A1A">ES · EN · PT</div></div>
+<div style="border-radius:12px;background:rgba(245,155,27,.1);border:1px solid rgba(245,155,27,.3);padding:13px 14px"><div style="font:500 9px/1 Inter,sans-serif;letter-spacing:.12em;color:#8A5200">POLÍTICA ÚNICA</div><div style="font:700 20px/1.5 Inter,sans-serif;color:#1A1A1A">100 %</div></div>
 </div>
 <div style="flex:1;border-radius:14px;background:#FFFFFF;border:1px solid rgba(42,49,128,.1);padding:16px;display:flex;flex-direction:column;justify-content:space-between;gap:14px">
-<div style="display:flex;align-items:center;justify-content:space-between"><span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">CUMPLIMIENTO POR EQUIPO</span><span style="font:500 10.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.5)">visibilidad centralizada</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between"><span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(42,49,128,.6)">CUMPLIMIENTO POR EQUIPO</span><span style="font:500 10.5px/1 Inter,sans-serif;color:rgba(26,26,26,.5)">visibilidad centralizada</span></div>
 <div style="display:flex;flex-direction:column;justify-content:space-between;gap:14px">
-<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.8)">Norte</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:94%;height:100%;border-radius:99px;background:#F59B1B;transform-origin:left;animation:rRun 4.4s ease-out infinite"></div></div><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A;text-align:right">94 %</span></div>
-<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.8)">Centro</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:88%;height:100%;border-radius:99px;background:#2A3180;transform-origin:left;animation:rRun 4.4s ease-out .2s infinite"></div></div><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A;text-align:right">88 %</span></div>
-<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.8)">Sur</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:71%;height:100%;border-radius:99px;background:rgba(42,49,128,.45);transform-origin:left;animation:rRun 4.4s ease-out .4s infinite"></div></div><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A;text-align:right">71 %</span></div>
-<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.8)">Canal socio</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:63%;height:100%;border-radius:99px;background:rgba(42,49,128,.3);transform-origin:left;animation:rRun 4.4s ease-out .6s infinite"></div></div><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A;text-align:right">63 %</span></div>
-<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 'Inter',sans-serif;color:rgba(26,26,26,.8)">Inside sales</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:81%;height:100%;border-radius:99px;background:rgba(42,49,128,.35);transform-origin:left;animation:rRun 4.4s ease-out .8s infinite"></div></div><span style="font:600 11.5px/1 'Inter',sans-serif;color:#1A1A1A;text-align:right">81 %</span></div>
+<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.8)">Norte</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:94%;height:100%;border-radius:99px;background:#F59B1B;transform-origin:left;animation:rRun 4.4s ease-out infinite"></div></div><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A;text-align:right">94 %</span></div>
+<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.8)">Centro</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:88%;height:100%;border-radius:99px;background:#2A3180;transform-origin:left;animation:rRun 4.4s ease-out .2s infinite"></div></div><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A;text-align:right">88 %</span></div>
+<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.8)">Sur</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:71%;height:100%;border-radius:99px;background:rgba(42,49,128,.45);transform-origin:left;animation:rRun 4.4s ease-out .4s infinite"></div></div><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A;text-align:right">71 %</span></div>
+<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.8)">Canal socio</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:63%;height:100%;border-radius:99px;background:rgba(42,49,128,.3);transform-origin:left;animation:rRun 4.4s ease-out .6s infinite"></div></div><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A;text-align:right">63 %</span></div>
+<div style="display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:12px"><span style="font:500 11.5px/1 Inter,sans-serif;color:rgba(26,26,26,.8)">Inside sales</span><div style="height:8px;border-radius:99px;background:rgba(42,49,128,.1);overflow:hidden"><div style="width:81%;height:100%;border-radius:99px;background:rgba(42,49,128,.35);transform-origin:left;animation:rRun 4.4s ease-out .8s infinite"></div></div><span style="font:600 11.5px/1 Inter,sans-serif;color:#1A1A1A;text-align:right">81 %</span></div>
 </div>
 <div style="display:flex;gap:12px;align-items:stretch">
 <div style="flex:1;border-radius:12px;background:#FAF8F5;border:1px solid rgba(42,49,128,.1);padding:13px 14px;display:flex;flex-direction:column;gap:7px">
-<span style="font:500 9px/1 'Inter',sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">PLANTILLA CORPORATIVA</span>
+<span style="font:500 9px/1 Inter,sans-serif;letter-spacing:.12em;color:rgba(42,49,128,.6)">PLANTILLA CORPORATIVA</span>
 <div style="display:flex;flex-wrap:wrap;gap:6px">
-<span style="font:500 10.5px/1 'Inter',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.14);border-radius:7px;padding:6px 9px">MX</span>
-<span style="font:500 10.5px/1 'Inter',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.14);border-radius:7px;padding:6px 9px">CO</span>
-<span style="font:500 10.5px/1 'Inter',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.14);border-radius:7px;padding:6px 9px">BR</span>
-<span style="font:500 10.5px/1 'Inter',sans-serif;color:#8A5200;background:rgba(245,155,27,.12);border:1px solid rgba(245,155,27,.3);border-radius:7px;padding:6px 9px">misma política</span>
+<span style="font:500 10.5px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.14);border-radius:7px;padding:6px 9px">MX</span>
+<span style="font:500 10.5px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.14);border-radius:7px;padding:6px 9px">CO</span>
+<span style="font:500 10.5px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(42,49,128,.14);border-radius:7px;padding:6px 9px">BR</span>
+<span style="font:500 10.5px/1 Inter,sans-serif;color:#8A5200;background:rgba(245,155,27,.12);border:1px solid rgba(245,155,27,.3);border-radius:7px;padding:6px 9px">misma política</span>
 </div>
 </div>
 <div style="flex:1;border-radius:12px;background:#12142B;padding:13px 14px;display:flex;flex-direction:column;gap:8px;overflow:hidden">
-<div style="display:flex;align-items:center;justify-content:space-between"><span style="font:600 9px/1 'Inter',sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.5)">REPORTE PROGRAMADO</span><span style="position:relative;width:84px;height:4px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden"><span style="position:absolute;left:0;top:0;width:24px;height:4px;border-radius:99px;background:#F59B1B;animation:rDot 2.4s linear infinite"></span></span></div>
-<div style="font:500 11px/1.5 'Inter',sans-serif;color:rgba(255,255,255,.72)">Cumplimiento global · mensual</div>
-<div style="font:600 11px/1.5 'Inter',sans-serif;color:#F59B1B">enviado a 14 líderes</div>
+<div style="display:flex;align-items:center;justify-content:space-between"><span style="font:600 9px/1 Inter,sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.5)">REPORTE PROGRAMADO</span><span style="position:relative;width:84px;height:4px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden"><span style="position:absolute;left:0;top:0;width:24px;height:4px;border-radius:99px;background:#F59B1B;animation:rDot 2.4s linear infinite"></span></span></div>
+<div style="font:500 11px/1.5 Inter,sans-serif;color:rgba(255,255,255,.72)">Cumplimiento global · mensual</div>
+<div style="font:600 11px/1.5 Inter,sans-serif;color:#F59B1B">enviado a 14 líderes</div>
 </div>
 </div>
 </div>
@@ -330,10 +330,10 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 
 <div style="background: #FAF8F5; border-radius: 14px; padding: 66px 40px 70px; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center; width: 100%; box-sizing: border-box; justify-content: center">
-<h2 style="margin: 0; max-width: 760px; font: 700 46px/1.15 'Inter',sans-serif; letter-spacing: -.035em; color: #1A1A1A; text-wrap: balance; font-size: 64px">Ponle fin a los errores de compensación variable</h2>
+<h2 style="margin: 0; max-width: 760px; font: 700 46px/1.15 Inter,sans-serif; letter-spacing: -.035em; color: #1A1A1A; text-wrap: balance; font-size: 64px">Ponle fin a los errores de compensación variable</h2>
 <div style="display:flex;align-items:center;gap:12px">
-<a href="#demo" style="font:600 13.5px/1 'Inter',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:15px 24px;white-space:nowrap;box-shadow:0 16px 30px -18px rgba(42,49,128,.9)">Agendar demo</a>
-<a href="#ventas" style="font:600 13.5px/1 'Inter',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:10px;padding:15px 24px;white-space:nowrap">Contactar a ventas</a>
+<a href="#demo" style="font:600 13.5px/1 Inter,sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:15px 24px;white-space:nowrap;box-shadow:0 16px 30px -18px rgba(42,49,128,.9)">Agendar demo</a>
+<a href="#ventas" style="font:600 13.5px/1 Inter,sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:10px;padding:15px 24px;white-space:nowrap">Contactar a ventas</a>
 </div>
 </div></section>
 
