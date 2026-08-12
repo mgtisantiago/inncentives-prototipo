@@ -1,19 +1,29 @@
 /* Reglas responsive compartidas por todas las páginas del sitio.
    Depende de: #page-root en el contenedor raíz y de las clases
-   .rw (fila con gutters), .g2/.g3/.g4 (grids), .cta-actions (botonera). */
+   .rw (fila con gutters), .g2/.g3/.g4 (grids), .cta-actions (botonera).
+
+   Los gutters horizontales los pone .rw cuando la sección la usa como fila
+   interior (index.html), y la propia <section> cuando no la hay (el resto de
+   páginas). Por eso el padding lateral se aplica con :not(:has(.rw)): así una
+   sección nunca acumula el gutter dos veces. El padding vertical sí va a
+   todas. Para excluir una sección del gutter (lienzos a sangre, sticky de
+   ancho completo) basta con anularlo en el <style> de la página. */
 
 @media (max-width: 1279px){
   #page-root{width:100% !important;max-width:100% !important}
-  #page-root section{padding-left:56px !important;padding-right:56px !important}
+  #page-root section:not(:has(.rw)){padding-left:56px !important;padding-right:56px !important}
   .rw{padding-left:56px !important;padding-right:56px !important}
   #page-root h1,#page-root h2,#page-root h3,#page-root p,#page-root span{max-width:100% !important}
   #page-root img{max-width:100%}
 }
 
 @media (max-width: 1023px){
-  #page-root section{padding-left:32px !important;padding-right:32px !important;padding-top:72px !important;padding-bottom:76px !important}
+  #page-root section:not(:has(.rw)){padding-left:32px !important;padding-right:32px !important}
   .rw{padding-left:32px !important;padding-right:32px !important}
   #page-root h1{font-size:44px !important}
+  /* Los h2 de sección van de 64-70px en escritorio: 36px es el escalón que
+     mantiene la jerarquía en tablet sin desbordar. Bajar más los aplana
+     contra los h3 (20px) y contra el cuerpo de texto. */
   #page-root h2{font-size:36px !important;line-height:1.18 !important}
   #page-root h3{font-size:20px !important}
   .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
@@ -22,11 +32,11 @@
 }
 
 @media (max-width: 767px){
-  #page-root section{padding-left:24px !important;padding-right:24px !important;padding-top:56px !important;padding-bottom:60px !important}
+  #page-root section:not(:has(.rw)){padding-left:24px !important;padding-right:24px !important}
   .rw{padding-left:24px !important;padding-right:24px !important}
   #page-root h1{font-size:34px !important;line-height:1.12 !important;letter-spacing:-.025em !important}
-  #page-root h2{font-size:28px !important;line-height:1.2 !important}
-  #page-root h3{font-size:18px !important}
+  #page-root h2{font-size:30px !important;line-height:1.2 !important}
+  #page-root h3{font-size:24px !important}
   .g2,.g3,.g4{grid-template-columns:minmax(0,1fr) !important}
   .cta-actions,.hero-cta{flex-direction:column !important;align-items:stretch !important;width:100% !important;gap:10px !important}
   .cta-actions a,.hero-cta a{text-align:center;padding:17px 20px !important;font-size:15px !important;white-space:normal !important}
@@ -34,8 +44,20 @@
 }
 
 @media (max-width: 479px){
-  #page-root section{padding-left:16px !important;padding-right:16px !important}
+  #page-root section:not(:has(.rw)){padding-left:16px !important;padding-right:16px !important}
   .rw{padding-left:16px !important;padding-right:16px !important}
+}
+
+/* Párrafos de entrada (.lead): el bajante de un hero o de una sección, a 20px
+   en escritorio. El resto de los <p> son texto corrido de 13-16px y no deben
+   tocarse, por eso la escala va en una clase y no en el selector `p`.
+   El 20px base vive en el style inline del párrafo, como el resto del sitio;
+   aquí sólo se define cómo baja. */
+@media (max-width: 1023px){
+  #page-root .lead{font-size:18px !important;line-height:1.55 !important}
+}
+@media (max-width: 767px){
+  #page-root .lead{font-size:16px !important;line-height:1.6 !important}
 }
 
 /* split heroes */
@@ -64,4 +86,26 @@
   /* rejillas internas del visual: una sola columna en teléfono */
   #page-root .split-fit [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) !important}
   #page-root .split-fit [style*="min-height"]{min-height:0 !important}
+}
+
+/* Diagramas conceptuales de roles (#roles). El lienzo (.rol-canvas) es una
+   composición absoluta de 1000x440: no refluye, así que se escala entera con
+   zoom mientras quepa. Por debajo de 768px ni el zoom alcanza (el texto queda
+   ilegible), así que se cambia al diagrama apilado vertical (.rol-stack). */
+@media (max-width: 1439px){
+  #page-root .rol-canvas{zoom:.95}
+}
+@media (max-width: 1279px){
+  #page-root .rol-canvas{zoom:.8}
+}
+@media (max-width: 1023px){
+  #page-root .rol-canvas{zoom:.62}
+  #page-root .roles-sticky{top:74px}
+  #page-root .rol-head{flex-direction:column !important;align-items:flex-start !important;gap:14px !important}
+}
+@media (max-width: 767px){
+  #page-root .roles-sticky{top:74px}
+  #page-root .rol-stage{display:none !important}
+  #page-root .rol-stack{display:flex !important}
+  #page-root .rol-block{gap:22px !important}
 }

@@ -3,7 +3,7 @@
 (() => {
   const CSS = `
 @media (max-width: 1023px){
-  #site-nav{padding-left:24px !important;padding-right:24px !important}
+  #site-nav .nav-inner{padding-left:24px !important;padding-right:24px !important}
   #site-nav .nav-desktop{display:none !important}
   #site-nav .nav-burger{display:flex !important}
   #site-nav .nav-login{display:none !important}
@@ -15,7 +15,7 @@
   #site-footer span{font-size:13px !important;line-height:1.65 !important;max-width:300px;text-wrap:balance}
 }
 @media (max-width: 479px){
-  #site-nav{padding-left:16px !important;padding-right:16px !important}
+  #site-nav .nav-inner{padding-left:16px !important;padding-right:16px !important}
   #site-nav .nav-logo img{width:150px !important}
   #site-nav .nav-cta{padding:11px 14px !important;font-size:12.5px !important}
   #site-footer{padding-left:16px !important;padding-right:16px !important}
@@ -25,6 +25,27 @@
     const t = document.createElement('template');
     t.innerHTML = html;
     return t.content;
+  }
+
+  /* El host <site-header> se monta dentro de #page-root (1440px centrado), pero
+     la barra debe llegar a los bordes de la ventana. Se saca con márgenes
+     negativos, la misma técnica que .bleed usa en las secciones a sangre: si el
+     contenedor ya ocupa todo el ancho, calc() da 0 y la regla no hace nada.
+     El contenido interior sigue topado a 1440px por .nav-inner.
+     Va en el documento y no en el shadow DOM porque estila al propio host.
+     overflow-x:clip acompaña siempre a esta técnica: 50vw cuenta la barra de
+     scroll y sin él aparecería scroll horizontal. */
+  function globalCSS() {
+    if (document.getElementById('site-chrome-global')) return;
+    const s = document.createElement('style');
+    s.id = 'site-chrome-global';
+    s.textContent = 'html{overflow-x:clip}'
+      /* width:auto es imprescindible: el host trae width:100% en el style inline
+         de cada página, que se resolvería contra los 1440px del contenedor y
+         dejaría la barra sin estirar pese a los márgenes negativos. */
+      + 'site-header{display:block;width:auto !important;'
+      + 'margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}';
+    (document.head || document.documentElement).appendChild(s);
   }
 
   const BASE = `:host{display:block}a{text-decoration:none}`;
@@ -49,6 +70,7 @@
     connectedCallback() {
       if (this._built) return;
       this._built = true;
+      globalCSS();
       const root = mount(this);
       this.style.position = this.style.position || 'sticky';
       this.style.top = '0';
@@ -56,24 +78,26 @@
       this.style.width = '100%';
 
       const desktop = LINKS.map(([k, label, href]) =>
-        `<a data-nav="${k}" href="${href}" style="font:500 14px/1 'Inter',sans-serif;color:#1A1A1A;white-space:nowrap;text-decoration:none">${label}</a>`
+        `<a data-nav="${k}" href="${href}" style="font:500 14px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A;white-space:nowrap;text-decoration:none">${label}</a>`
       ).join('');
       const mobile = LINKS.map(([k, label, href]) =>
-        `<a data-navm="${k}" href="${href}" style="font:500 26px/1.3 'Inter',sans-serif;color:#1A1A1A;padding:16px 0;border-bottom:1px solid rgba(26,26,26,.08);text-decoration:none">${label}</a>`
+        `<a data-navm="${k}" href="${href}" style="font:500 26px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A;padding:16px 0;border-bottom:1px solid rgba(26,26,26,.08);text-decoration:none">${label}</a>`
       ).join('');
 
       root.append(frag(`
-<header id="site-nav" style="background:transparent;transition:background .25s ease, box-shadow .25s ease, padding .25s ease;width:100%;max-width:1440px;margin:0 auto;padding:26px 128px;display:flex;align-items:center;gap:16px 24px;box-sizing:border-box">
+<header id="site-nav" style="background:transparent;transition:background .25s ease, box-shadow .25s ease, padding .25s ease;width:100%;padding:26px 0;box-sizing:border-box">
+<div class="nav-inner" style="width:100%;max-width:1440px;margin:0 auto;padding:0 128px;display:flex;align-items:center;gap:16px 24px;box-sizing:border-box">
 <a href="index.html" class="nav-logo" style="display:flex;align-items:center;flex:1 1 0;min-width:0;justify-content:flex-start">
 <img src="${logo()}" alt="Inncentives" style="width:233px;height:28px;display:block">
 </a>
 <nav class="nav-desktop" style="display:flex;align-items:center;justify-content:center;flex:none;gap:26px;white-space:nowrap">${desktop}</nav>
 <div style="display:flex;align-items:center;gap:8px;flex:1 1 0;min-width:0;justify-content:flex-end">
-<a href="#login" class="nav-login" style="font:500 14px/1 'Inter',sans-serif;color:rgba(42,49,128,.7);white-space:nowrap;text-decoration:none">Iniciar sesión</a>
-<a href="#demo" class="nav-cta" style="font:600 12px/1 'Inter',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:13px 20px;white-space:nowrap;box-shadow:0 12px 24px -14px rgba(42,49,128,.9);text-decoration:none">Agendar demo</a>
+<a href="#login" class="nav-login" style="font:500 14px/1 'IBM Plex Sans',sans-serif;color:rgba(42,49,128,.7);white-space:nowrap;text-decoration:none">Iniciar sesión</a>
+<a href="#demo" class="nav-cta" style="font:600 12px/1 'IBM Plex Sans',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:13px 20px;white-space:nowrap;box-shadow:0 12px 24px -14px rgba(42,49,128,.9);text-decoration:none">Agendar demo</a>
 <button type="button" class="nav-burger" aria-label="Abrir menú" style="display:none;align-items:center;justify-content:center;width:36px;height:36px;flex:none;border:1px solid rgba(26,26,26,.14);border-radius:11px;background:#FFFFFF;cursor:pointer;padding:0">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
 </button>
+</div>
 </div>
 </header>
 <div id="nav-panel" style="position:fixed;inset:0;z-index:200;background:#FFFFFF;display:none;flex-direction:column;padding:22px 24px 40px;box-sizing:border-box;overflow-y:auto">
@@ -85,8 +109,8 @@
 </div>
 <nav style="display:flex;flex-direction:column;gap:4px;padding-top:34px">${mobile}</nav>
 <div style="display:flex;flex-direction:column;gap:12px;padding-top:34px;margin-top:auto">
-<a href="#demo" style="font:600 15px/1 'Inter',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:11px;padding:18px 22px;text-align:center;text-decoration:none">Agendar demo</a>
-<a href="#login" style="font:600 15px/1 'Inter',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(42,49,128,.18);border-radius:11px;padding:18px 22px;text-align:center;text-decoration:none">Iniciar sesión</a>
+<a href="#demo" style="font:600 15px/1 'IBM Plex Sans',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:11px;padding:18px 22px;text-align:center;text-decoration:none">Agendar demo</a>
+<a href="#login" style="font:600 15px/1 'IBM Plex Sans',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(42,49,128,.18);border-radius:11px;padding:18px 22px;text-align:center;text-decoration:none">Iniciar sesión</a>
 </div>
 </div>`));
 
@@ -152,9 +176,9 @@
       const root = mount(this);
       this.style.width = '100%';
       root.append(frag(`
-<footer id="site-footer" style="width:100%;max-width:1440px;margin:0 auto;padding:38px 128px 46px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
-<span style="font:400 12.5px/1.5 'Inter',sans-serif;color:#1A1A1A">© 2026 Inncentives | San Pedro Garza García, Nuevo León, México</span>
-<span style="font:700 12.5px/1.5 'Inter',sans-serif;color:#1A1A1A">ICM Solutions by Neitek</span>
+<footer id="site-footer" style="width:100%;max-width:1440px;margin:0 auto; padding:8px 128px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+<span style="font:400 12.5px/1.5 'IBM Plex Sans',sans-serif;color:#1A1A1A">© 2026 Inncentives | San Pedro Garza García, Nuevo León, México</span>
+<span style="font:700 12.5px/1.5 'IBM Plex Sans',sans-serif;color:#1A1A1A">ICM Solutions by Neitek</span>
 </footer>`));
     }
   }

@@ -9,11 +9,14 @@
 <body>
 <x-dc>
 <helmet><link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <script src="./site-chrome.js"></script>
 <link rel="stylesheet" href="./responsive.css">
 <style>
-body{margin:0;background:#FFFFFF;font-family:Inter,system-ui,sans-serif}
+body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',system-ui,sans-serif}
+/* Titulos en Space Grotesk; el resto hereda IBM Plex Sans del body.
+   !important porque los encabezados traen la familia en el shorthand `font:` inline. */
+h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk','IBM Plex Sans',system-ui,sans-serif !important}
 a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 /* page responsive */
 @media (max-width: 1023px){
@@ -26,25 +29,25 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 }
 </style></helmet>
 
-<div id="page-root" style="position: relative; min-height: 100vh; background: #FFFFFF; font-family: Inter,sans-serif; display: flex; flex-direction: column; width: 1440px; max-width: 100%; margin: 0 auto">
+<div id="page-root" style="position: relative; min-height: 100vh; background: #FFFFFF; font-family: 'IBM Plex Sans',sans-serif; display: flex; flex-direction: column; width: 1440px; max-width: 100%; margin: 0 auto">
 
 
 <site-header active="casos" style="position:sticky;top:0;z-index:60;width:100%"></site-header>
 
 <section id="hero" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:56px 128px 0;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center">
-<h1 style="margin:0;font:800 68px/1.06 Inter,sans-serif;letter-spacing:-.03em;color:#1A1A1A;text-wrap:balance">Resultados reales, no promesas</h1>
-<p style="margin:0;max-width:820px;font:400 17px/1.6 Inter,sans-serif;color:rgba(26,26,26,.72)">Empresas que reemplazaron procesos manuales por compensación variable automatizada con Inncentives.</p>
+<h1 style="margin:0;font:800 68px/1.06 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#1A1A1A;text-wrap:balance">Resultados reales, no promesas</h1>
+<p style="margin:0;max-width:820px;font:400 17px/1.6 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.72)">Empresas que reemplazaron procesos manuales por compensación variable automatizada con Inncentives.</p>
 </section>
 
 <section id="casos" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:44px 128px 0;display:flex;flex-direction:column;gap:28px">
 
 <div style="display:flex;justify-content:center">
 <div id="filtros" style="display:flex;align-items:center;gap:4px;background:#F5F3EF;border-radius:999px;padding:5px">
-<button type="button" data-cat="todos" onClick="{{ pick }}" style="border:0;cursor:pointer;font:600 13px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border-radius:999px;padding:10px 18px;box-shadow:0 2px 8px -4px rgba(26,26,26,.45);transition:background .2s ease, color .2s ease">Todos</button>
-<button type="button" data-cat="seguridad" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 Inter,sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Seguridad</button>
-<button type="button" data-cat="retail" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 Inter,sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Retail</button>
-<button type="button" data-cat="tecnologia" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 Inter,sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Tecnología</button>
-<button type="button" data-cat="manufactura" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 Inter,sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Manufactura</button>
+<button type="button" data-cat="todos" onClick="{{ pick }}" style="border:0;cursor:pointer;font:600 13px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A;background:#FFFFFF;border-radius:999px;padding:10px 18px;box-shadow:0 2px 8px -4px rgba(26,26,26,.45);transition:background .2s ease, color .2s ease">Todos</button>
+<button type="button" data-cat="seguridad" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Seguridad</button>
+<button type="button" data-cat="retail" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Retail</button>
+<button type="button" data-cat="tecnologia" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Tecnología</button>
+<button type="button" data-cat="manufactura" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Manufactura</button>
 </div>
 </div>
 
@@ -56,12 +59,12 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 </div>
 <div style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:40px 40px 40px 32px;box-sizing:border-box;background:#1A1A1A">
 <div style="display:flex;flex-direction:column;gap:6px">
-<span style="font:800 54px/1 Inter,sans-serif;letter-spacing:-.03em;color:#FFFFFF">500K+</span>
-<span style="font:500 13px/1.4 Inter,sans-serif;color:rgba(255,255,255,.62)">Colaboradores</span>
+<span style="font:800 54px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#FFFFFF">500K+</span>
+<span style="font:500 13px/1.4 'IBM Plex Sans',sans-serif;color:rgba(255,255,255,.62)">Colaboradores</span>
 </div>
 <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
-<p style="margin:0;font:500 20px/1.4 Inter,sans-serif;color:#FFFFFF;max-width:300px;text-wrap:pretty">Compensación variable completamente automatizada, de punta a punta</p>
-<a href="caso-locsa.html" style="font:600 12.5px/1 Inter,sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(255,255,255,.34);border-radius:8px;padding:11px 16px;transition:background .2s ease">Leer caso</a>
+<p style="margin:0;font:500 20px/1.4 'IBM Plex Sans',sans-serif;color:#FFFFFF;max-width:300px;text-wrap:pretty">Compensación variable completamente automatizada, de punta a punta</p>
+<a href="caso-locsa.html" style="font:600 12.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(255,255,255,.34);border-radius:8px;padding:11px 16px;transition:background .2s ease">Leer caso</a>
 </div>
 </div>
 </article>
@@ -71,9 +74,9 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <img src="assets/cliente-liverpool.svg" alt="Liverpool" style="width:100%;height:100%;max-width:none;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
-<h3 style="margin:0;font:700 19px/1.3 Inter,sans-serif;color:#1A1A1A">Liverpool</h3>
-<p style="margin:0;font:400 14px/1.55 Inter,sans-serif;color:rgba(26,26,26,.7);max-width:300px">Pendiente de autorización y contenido por parte de dirección</p>
-<a href="#caso-liverpool" style="font:600 12.5px/1 Inter,sans-serif;color:#2A3180;border:1px solid rgba(42,49,128,.28);border-radius:8px;padding:10px 15px;transition:background .2s ease">Leer caso</a>
+<h3 style="margin:0;font:700 19px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Liverpool</h3>
+<p style="margin:0;font:400 14px/1.55 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);max-width:300px">Pendiente de autorización y contenido por parte de dirección</p>
+<a href="#caso-liverpool" style="font:600 12.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;border:1px solid rgba(42,49,128,.28);border-radius:8px;padding:10px 15px;transition:background .2s ease">Leer caso</a>
 </div>
 </article>
 
@@ -82,9 +85,9 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <img src="assets/cliente-cocacola.svg" alt="Coca-Cola" style="width:100%;height:100%;max-width:none;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
-<h3 style="margin:0;font:700 19px/1.3 Inter,sans-serif;color:#1A1A1A">Femsa - Coca Cola</h3>
-<p style="margin:0;font:400 14px/1.55 Inter,sans-serif;color:rgba(26,26,26,.7);max-width:300px">Pendiente de autorización y contenido por parte de dirección</p>
-<a href="#caso-cocacola" style="font:600 12.5px/1 Inter,sans-serif;color:#2A3180;border:1px solid rgba(42,49,128,.28);border-radius:8px;padding:10px 15px;transition:background .2s ease">Leer caso</a>
+<h3 style="margin:0;font:700 19px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Femsa - Coca Cola</h3>
+<p style="margin:0;font:400 14px/1.55 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);max-width:300px">Pendiente de autorización y contenido por parte de dirección</p>
+<a href="#caso-cocacola" style="font:600 12.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;border:1px solid rgba(42,49,128,.28);border-radius:8px;padding:10px 15px;transition:background .2s ease">Leer caso</a>
 </div>
 </article>
 
@@ -93,9 +96,9 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <img src="assets/cliente-banorte.svg" alt="Banorte" style="width:100%;height:100%;max-width:none;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
-<h3 style="margin:0;font:700 19px/1.3 Inter,sans-serif;color:#1A1A1A">Banorte</h3>
-<p style="margin:0;font:400 14px/1.55 Inter,sans-serif;color:rgba(26,26,26,.7);max-width:300px">Pendiente de autorización y contenido por parte de dirección</p>
-<a href="#caso-banorte" style="font:600 12.5px/1 Inter,sans-serif;color:#2A3180;border:1px solid rgba(42,49,128,.28);border-radius:8px;padding:10px 15px;transition:background .2s ease">Leer caso</a>
+<h3 style="margin:0;font:700 19px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Banorte</h3>
+<p style="margin:0;font:400 14px/1.55 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);max-width:300px">Pendiente de autorización y contenido por parte de dirección</p>
+<a href="#caso-banorte" style="font:600 12.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;border:1px solid rgba(42,49,128,.28);border-radius:8px;padding:10px 15px;transition:background .2s ease">Leer caso</a>
 </div>
 </article>
 
@@ -104,23 +107,23 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <img src="assets/cliente-oxxo.svg" alt="OXXO" style="width:100%;height:100%;max-width:none;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
-<h3 style="margin:0;font:700 19px/1.3 Inter,sans-serif;color:#1A1A1A">Femsa - Comercio (OXXO)</h3>
-<p style="margin:0;font:400 14px/1.55 Inter,sans-serif;color:rgba(26,26,26,.7);max-width:300px">Pendiente de autorización y contenido por parte de dirección</p>
-<a href="#caso-oxxo" style="font:600 12.5px/1 Inter,sans-serif;color:#2A3180;border:1px solid rgba(42,49,128,.28);border-radius:8px;padding:10px 15px;transition:background .2s ease">Leer caso</a>
+<h3 style="margin:0;font:700 19px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Femsa - Comercio (OXXO)</h3>
+<p style="margin:0;font:400 14px/1.55 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);max-width:300px">Pendiente de autorización y contenido por parte de dirección</p>
+<a href="#caso-oxxo" style="font:600 12.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;border:1px solid rgba(42,49,128,.28);border-radius:8px;padding:10px 15px;transition:background .2s ease">Leer caso</a>
 </div>
 </article>
 
 </div>
 
-<p id="vacio" style="margin:0;display:none;text-align:center;font:500 15px/1.6 Inter,sans-serif;color:rgba(26,26,26,.55);padding:48px 0">Aún no hay casos publicados en esta categoría.</p>
+<p id="vacio" style="margin:0;display:none;text-align:center;font:500 15px/1.6 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.55);padding:48px 0">Aún no hay casos publicados en esta categoría.</p>
 </section>
 
 <section id="cta" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:88px 128px 0">
 <div style="background:#FAF8F5;border-radius:24px;padding:76px 40px;display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center">
-<h2 style="margin:0;max-width:760px;font:800 52px/1.12 Inter,sans-serif;letter-spacing:-.03em;color:#1A1A1A;text-wrap:balance">¿Quieres ser el próximo caso de éxito?</h2>
+<h3 style="margin:0;max-width:760px;font:800 52px/1.12 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#1A1A1A;text-wrap:balance">¿Quieres ser el próximo caso de éxito?</h3>
 <div class="cta-actions" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center">
-<a href="#demo" style="font:600 13.5px/1 Inter,sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:14px 22px;box-shadow:0 12px 24px -14px rgba(42,49,128,.9)">Agendar demo</a>
-<a href="#ventas" style="font:600 13.5px/1 Inter,sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(26,26,26,.14);border-radius:10px;padding:14px 22px">Contactar a ventas</a>
+<a href="#demo" style="font:600 13.5px/1 'IBM Plex Sans',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:14px 22px;box-shadow:0 12px 24px -14px rgba(42,49,128,.9)">Agendar demo</a>
+<a href="#ventas" style="font:600 13.5px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(26,26,26,.14);border-radius:10px;padding:14px 22px">Contactar a ventas</a>
 </div>
 </div>
 </section>
