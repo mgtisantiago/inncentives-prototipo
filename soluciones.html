@@ -41,12 +41,16 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <section id="soluciones" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:40px 128px 0;display:flex;flex-direction:column;">
 
-<div style="display:flex;justify-content:center">
-<div id="filtros" style="display:flex;align-items:center;gap:4px;background:#F5F3EF;border-radius:999px;padding:5px">
-<button type="button" data-cat="revops" onClick="{{ pick }}" style="border:0;cursor:pointer;font:600 13px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A;background:#FFFFFF;border-radius:999px;padding:10px 18px;box-shadow:0 2px 8px -4px rgba(26,26,26,.45);transition:background .2s ease, color .2s ease">RevOps</button>
-<button type="button" data-cat="finanzas" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Finanzas</button>
-<button type="button" data-cat="ventas" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Ventas</button>
-<button type="button" data-cat="rrhh" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">RRHH</button>
+<!-- Submenú: pestañas subrayadas + línea de avance de lectura del rol activo. -->
+<div class="subnav" style="position:sticky;top:70px;z-index:40;display:flex;flex-direction:column;background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)">
+<div id="filtros" style="display:flex;align-items:stretch;gap:28px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+<button type="button" data-cat="revops" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid #1A1A1A;padding:13px 2px 11px;font:600 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:#1A1A1A;-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">RevOps</button>
+<button type="button" data-cat="finanzas" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Finanzas</button>
+<button type="button" data-cat="ventas" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Ventas</button>
+<button type="button" data-cat="rrhh" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">RRHH</button>
+</div>
+<div style="position:relative;height:3px;background:rgba(42,49,128,.1)">
+<span id="subnav-prog" style="position:absolute;top:0;left:0;bottom:0;width:100%;display:block;transform-origin:left center;transform:scaleX(0);background:#F59B1B;transition:transform .12s linear"></span>
 </div>
 </div>
 
@@ -302,14 +306,12 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 </sc-if>
 </div>
 </div>
-</section><section id="cta" style="position: relative; max-width: 1440px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 80px 128px 0; display: flex; flex-direction: column; align-items: stretch; padding-top: 20px">
+</section>
 
-
-
-
-<div style="background: #FAF8F5; border-radius: 14px; padding: 66px 40px 70px; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center; width: 100%; box-sizing: border-box; justify-content: center">
-<h3 style="margin: 0; max-width: 760px; font: 700 46px/1.15 'IBM Plex Sans',sans-serif; letter-spacing: -.035em; color: #1A1A1A; text-wrap: balance; font-size: 64px">Ponle fin a los errores de compensación variable</h3>
-<div style="display:flex;align-items:center;gap:12px">
+<section id="cta" style="position: relative; max-width: 1440px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 56px 128px; display: flex; flex-direction: column; align-items: stretch; padding-top: 20px">
+<div class="cta-card" style="border-radius: 14px; padding: 56px 128px; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center; width: 100%; box-sizing: border-box; justify-content: center">
+<h3 class="cta-title" style="margin:0;max-width:760px; font: 700 46px/1.15 'IBM Plex Sans',sans-serif; letter-spacing: -.035em; color: #1A1A1A; text-wrap: balance; font-size: 64px">Ponle fin a los errores de compensación variable</h3>
+<div class="cta-actions" style="display:flex;align-items:center;gap:12px">
 <a href="#demo" style="font:600 13.5px/1 'IBM Plex Sans',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:15px 24px;white-space:nowrap;box-shadow:0 16px 30px -18px rgba(42,49,128,.9)">Agendar demo</a>
 <a href="#ventas" style="font:600 13.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:10px;padding:15px 24px;white-space:nowrap">Contactar a ventas</a>
 </div>
@@ -322,16 +324,69 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 class Component extends DCLogic {
   state = { active: 'revops' };
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.progRaf) cancelAnimationFrame(this.progRaf);
+  }
+
+  /* Avance de lectura: 0 cuando el panel del rol arranca bajo el submenú,
+     1 cuando su último renglón ya entró en pantalla. Se escribe directo al DOM
+     para no re-renderizar en cada scroll. */
+  onScroll = () => {
+    if (this.progRaf) return;
+    this.progRaf = requestAnimationFrame(() => { this.progRaf = 0; this.updateProg(); });
+  };
+
+  updateProg() {
+    const bar = document.querySelector('.subnav');
+    const body = document.querySelector('#soluciones .split');
+    const fill = document.getElementById('subnav-prog');
+    if (!bar || !body || !fill) return;
+    const r = body.getBoundingClientRect();
+    const top = (parseFloat(getComputedStyle(bar).top) || 0) + bar.offsetHeight;
+    /* Recorrido: del tope del bloque bajo la barra hasta que su ultima linea
+       entra en pantalla. Con piso de media pantalla: si el bloque apenas supera
+       el alto de la ventana ese tramo es minimo y la linea saltaria de golpe. */
+    const span = Math.max(r.height - (window.innerHeight - top), window.innerHeight * 0.5);
+    const p = Math.min(1, Math.max(0, (top - r.top) / span));
+    fill.style.transform = 'scaleX(' + p.toFixed(3) + ')';
+  }
+
   pick = (e) => {
     const cat = e.currentTarget.dataset.cat;
     document.querySelectorAll('#filtros button').forEach((b) => {
       const on = b.dataset.cat === cat;
-      b.style.background = on ? '#FFFFFF' : 'transparent';
-      b.style.color = on ? '#1A1A1A' : 'rgba(26,26,26,.7)';
+      b.style.borderBottomColor = on ? '#1A1A1A' : 'transparent';
+      b.style.color = on ? '#1A1A1A' : 'rgba(26,26,26,.42)';
       b.style.fontWeight = on ? '600' : '500';
-      b.style.boxShadow = on ? '0 2px 8px -4px rgba(26,26,26,.45)' : 'none';
     });
+    /* Sólo el scroll horizontal del carrusel de pestañas: scrollIntoView
+       movería también la página y pisaría el scroll de scrollAlInicio. */
+    const cont = e.currentTarget.parentElement;
+    cont.scrollTo({ left: Math.max(0, e.currentTarget.offsetLeft - (cont.clientWidth - e.currentTarget.offsetWidth) / 2), behavior: 'smooth' });
     this.setState({ active: cat });
+    this.scrollAlInicio();
+  };
+
+  /* Al cambiar de pestaña, deja el contenido justo debajo del submenú para
+     empezar a leer desde arriba. Se espera un frame a que sc-if repinte. */
+  scrollAlInicio = () => {
+    requestAnimationFrame(() => {
+      const bar = document.querySelector('.subnav');
+      const block = document.querySelector('#soluciones .split');
+      if (!bar || !block) return;
+      const stickyTop = parseFloat(getComputedStyle(bar).top) || 0;
+      const y = window.scrollY + block.getBoundingClientRect().top - stickyTop - bar.offsetHeight - 12;
+      const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: Math.max(0, y), behavior: quieto ? 'auto' : 'smooth' });
+      this.updateProg();
+    });
   };
 
   renderVals() {

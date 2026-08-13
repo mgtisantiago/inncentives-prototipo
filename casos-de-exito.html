@@ -41,14 +41,17 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <section id="casos" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:44px 128px 0;display:flex;flex-direction:column;gap:28px">
 
-<div style="display:flex;justify-content:center">
-<div id="filtros" style="display:flex;align-items:center;gap:4px;background:#F5F3EF;border-radius:999px;padding:5px">
-<button type="button" data-cat="todos" onClick="{{ pick }}" style="border:0;cursor:pointer;font:600 13px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A;background:#FFFFFF;border-radius:999px;padding:10px 18px;box-shadow:0 2px 8px -4px rgba(26,26,26,.45);transition:background .2s ease, color .2s ease">Todos</button>
-<button type="button" data-cat="seguridad" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Seguridad</button>
-<button type="button" data-cat="retail" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Retail</button>
-<button type="button" data-cat="tecnologia" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Tecnología</button>
-<button type="button" data-cat="manufactura" onClick="{{ pick }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Manufactura</button>
+<!-- Submenú de filtros: mismas pestañas subrayadas del resto del sitio. Aquí no
+     hay línea de avance porque las pestañas filtran una rejilla, no un texto. -->
+<div class="subnav" style="position:sticky;top:70px;z-index:40;display:flex;flex-direction:column;background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)">
+<div id="filtros" style="display:flex;align-items:stretch;gap:28px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+<button type="button" data-cat="todos" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid #1A1A1A;padding:13px 2px 11px;font:600 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:#1A1A1A;-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Todos</button>
+<button type="button" data-cat="seguridad" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Seguridad</button>
+<button type="button" data-cat="retail" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Retail</button>
+<button type="button" data-cat="tecnologia" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Tecnología</button>
+<button type="button" data-cat="manufactura" onClick="{{ pick }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Manufactura</button>
 </div>
+<div style="height:3px;background:rgba(42,49,128,.1)"></div>
 </div>
 
 <div id="grid" class="g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start">
@@ -118,9 +121,9 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <p id="vacio" style="margin:0;display:none;text-align:center;font:500 15px/1.6 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.55);padding:48px 0">Aún no hay casos publicados en esta categoría.</p>
 </section>
 
-<section id="cta" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:88px 128px 0">
-<div style="background:#FAF8F5;border-radius:24px;padding:76px 40px;display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center">
-<h3 style="margin:0;max-width:760px;font:800 52px/1.12 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#1A1A1A;text-wrap:balance">¿Quieres ser el próximo caso de éxito?</h3>
+<section id="cta" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:56px 128px">
+<div class="cta-card" style="border-radius:24px;padding:56px 128px;display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center">
+<h3 class="cta-title" style="margin:0;max-width:760px;font:800 52px/1.12 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#1A1A1A;text-wrap:balance">¿Quieres ser el próximo caso de éxito?</h3>
 <div class="cta-actions" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center">
 <a href="#demo" style="font:600 13.5px/1 'IBM Plex Sans',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:14px 22px;box-shadow:0 12px 24px -14px rgba(42,49,128,.9)">Agendar demo</a>
 <a href="#ventas" style="font:600 13.5px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A;background:#FFFFFF;border:1px solid rgba(26,26,26,.14);border-radius:10px;padding:14px 22px">Contactar a ventas</a>
@@ -151,11 +154,14 @@ class Component extends DCLogic {
     const cat = e.currentTarget.dataset.cat;
     document.querySelectorAll('#filtros button').forEach((b) => {
       const on = b.dataset.cat === cat;
-      b.style.background = on ? '#FFFFFF' : 'transparent';
-      b.style.color = on ? '#1A1A1A' : 'rgba(26,26,26,.7)';
+      b.style.borderBottomColor = on ? '#1A1A1A' : 'transparent';
+      b.style.color = on ? '#1A1A1A' : 'rgba(26,26,26,.42)';
       b.style.fontWeight = on ? '600' : '500';
-      b.style.boxShadow = on ? '0 2px 8px -4px rgba(26,26,26,.45)' : 'none';
     });
+    /* Sólo el scroll horizontal del carrusel de pestañas: scrollIntoView
+       movería también la página y pisaría el scroll de scrollAlInicio. */
+    const cont = e.currentTarget.parentElement;
+    cont.scrollTo({ left: Math.max(0, e.currentTarget.offsetLeft - (cont.clientWidth - e.currentTarget.offsetWidth) / 2), behavior: 'smooth' });
     let shown = 0;
     document.querySelectorAll('#grid > article').forEach((card) => {
       const match = cat === 'todos' || card.dataset.cat === cat;
@@ -165,6 +171,21 @@ class Component extends DCLogic {
     });
     const empty = document.getElementById('vacio');
     if (empty) empty.style.display = shown ? 'none' : 'block';
+    this.scrollAlInicio();
+  };
+
+  /* Al cambiar de filtro, deja la rejilla justo debajo del submenú para verla
+     desde la primera tarjeta. Se espera un frame a que se repinte. */
+  scrollAlInicio = () => {
+    requestAnimationFrame(() => {
+      const bar = document.querySelector('.subnav');
+      const block = document.getElementById('grid');
+      if (!bar || !block) return;
+      const stickyTop = parseFloat(getComputedStyle(bar).top) || 0;
+      const y = window.scrollY + block.getBoundingClientRect().top - stickyTop - bar.offsetHeight - 12;
+      const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: Math.max(0, y), behavior: quieto ? 'auto' : 'smooth' });
+    });
   };
 
   initMotion = () => {

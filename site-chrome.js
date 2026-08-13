@@ -8,17 +8,20 @@
   #site-nav .nav-burger{display:flex !important}
   #site-nav .nav-login{display:none !important}
   #site-nav .nav-logo img{width:180px !important}
-  #site-footer{padding-left:32px !important;padding-right:32px !important;flex-direction:column !important;justify-content:center !important;text-align:center !important;gap:10px !important}
+  #site-footer{padding:36px 32px 40px !important;flex-direction:column !important;justify-content:center !important;text-align:center !important;gap:10px !important}
+  #site-footer::before{left:32px;right:32px}
 }
 @media (max-width: 767px){
-  #site-footer{padding-left:24px !important;padding-right:24px !important;gap:8px !important}
+  #site-footer{padding:32px 24px 36px !important;gap:8px !important}
+  #site-footer::before{left:24px;right:24px}
   #site-footer span{font-size:13px !important;line-height:1.65 !important;max-width:300px;text-wrap:balance}
 }
 @media (max-width: 479px){
   #site-nav .nav-inner{padding-left:16px !important;padding-right:16px !important}
   #site-nav .nav-logo img{width:150px !important}
   #site-nav .nav-cta{padding:11px 14px !important;font-size:12.5px !important}
-  #site-footer{padding-left:16px !important;padding-right:16px !important}
+  #site-footer{padding:28px 16px 32px !important}
+  #site-footer::before{left:16px;right:16px}
 }`;
 
   function frag(html) {
@@ -48,7 +51,12 @@
     (document.head || document.documentElement).appendChild(s);
   }
 
-  const BASE = `:host{display:block}a{text-decoration:none}`;
+  /* La línea del footer se pinta como ::before y no como border-top para que
+     quede alineada con los 128px de gutter del contenido, no con el borde de
+     la caja. Cada breakpoint reajusta left/right junto con su padding. */
+  const BASE = `:host{display:block}a{text-decoration:none}
+#site-footer{position:relative}
+#site-footer::before{content:'';position:absolute;top:0;left:128px;right:128px;height:1px;background:rgba(42,49,128,.12)}`;
   function mount(el) {
     const root = el.shadowRoot || el.attachShadow({ mode: 'open' });
     const style = document.createElement('style');
@@ -176,7 +184,7 @@
       const root = mount(this);
       this.style.width = '100%';
       root.append(frag(`
-<footer id="site-footer" style="width:100%;max-width:1440px;margin:0 auto; padding:8px 128px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+<footer id="site-footer" style="width:100%;max-width:1440px;margin:0 auto; padding:40px 128px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
 <span style="font:400 12.5px/1.5 'IBM Plex Sans',sans-serif;color:#1A1A1A">© 2026 Inncentives | San Pedro Garza García, Nuevo León, México</span>
 <span style="font:700 12.5px/1.5 'IBM Plex Sans',sans-serif;color:#1A1A1A">ICM Solutions by Neitek</span>
 </footer>`));

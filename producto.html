@@ -187,11 +187,15 @@ SIN INTERVENCIÓN
 <p style="margin:0;max-width:760px;font:400 15px/1.6 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.66)">Cada rol interactúa con Inncentives de manera distinta, sin perder una sola fuente de verdad.</p>
 </div>
 
-<div class="roles-sticky" style="position:sticky;top:76px;z-index:40;display:flex;justify-content:center;padding:6px 0">
-<div id="roles-tabs" style="display:flex;align-items:center;gap:4px;background:rgba(245,243,239,.92);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-radius:999px;padding:5px;box-shadow:0 1px 0 rgba(42,49,128,.08),0 14px 30px -22px rgba(42,49,128,.7)">
-<button type="button" data-rol="vendedor" onClick="{{ pickRol }}" style="border:0;cursor:pointer;font:600 13px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A;background:#FFFFFF;border-radius:999px;padding:10px 18px;box-shadow:0 2px 8px -4px rgba(26,26,26,.45);transition:background .2s ease, color .2s ease">Vendedor</button>
-<button type="button" data-rol="gerente" onClick="{{ pickRol }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Gerente</button>
-<button type="button" data-rol="admin" onClick="{{ pickRol }}" style="border:0;cursor:pointer;font:500 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.7);background:transparent;border-radius:999px;padding:10px 18px;transition:background .2s ease, color .2s ease">Administrador</button>
+<!-- Submenú: pestañas subrayadas + línea de avance de lectura del rol activo. -->
+<div class="subnav roles-sticky" style="position:sticky;top:70px;z-index:40;display:flex;flex-direction:column;background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)">
+<div id="roles-tabs" style="display:flex;align-items:stretch;gap:28px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+<button type="button" data-rol="vendedor" onClick="{{ pickRol }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid #1A1A1A;padding:13px 2px 11px;font:600 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:#1A1A1A;-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Vendedor</button>
+<button type="button" data-rol="gerente" onClick="{{ pickRol }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Gerente</button>
+<button type="button" data-rol="admin" onClick="{{ pickRol }}" style="flex:none;cursor:pointer;white-space:nowrap;background:transparent;border:0;border-bottom:2px solid transparent;padding:13px 2px 11px;font:500 15px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.01em;color:rgba(26,26,26,.42);-webkit-tap-highlight-color:transparent;transition:color .2s ease, border-color .2s ease">Administrador</button>
+</div>
+<div style="position:relative;height:3px;background:rgba(42,49,128,.1)">
+<span id="subnav-prog" style="position:absolute;top:0;left:0;bottom:0;width:100%;display:block;transform-origin:left center;transform:scaleX(0);background:#F59B1B;transition:transform .12s linear"></span>
 </div>
 </div>
 
@@ -790,9 +794,9 @@ SIN INTERVENCIÓN
 
 
 
-<section id="cta" style="position: relative; max-width: 1440px; margin: 0 auto; padding: 90px 128px 0; box-sizing: border-box; width: 100%">
-<div style="background: #FAF8F5; border-radius: 14px; padding: 66px 40px 70px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center; width: 100%">
-<h3 style="margin: 0; max-width: 760px; font: 700 46px/1.15 'IBM Plex Sans',sans-serif; letter-spacing: -.035em; color: #1A1A1A; text-wrap: balance; font-size: 64px">Ponle fin a los errores de compensación variable</h3>
+<section id="cta" style="position: relative; max-width: 1440px; margin: 0 auto; padding: 56px 128px; box-sizing: border-box; width: 100%">
+<div class="cta-card" style="border-radius: 14px; padding: 56px 128px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center; width: 100%">
+<h3 class="cta-title" style="margin:0;max-width:760px; font: 700 46px/1.15 'IBM Plex Sans',sans-serif; letter-spacing: -.035em; color: #1A1A1A; text-wrap: balance; font-size: 64px">Ponle fin a los errores de compensación variable</h3>
 <div class="cta-actions" style="display:flex;align-items:center;gap:12px">
 <a href="#demo" style="font:600 13.5px/1 'IBM Plex Sans',sans-serif;color:#FFFFFF;background:#2A3180;border-radius:10px;padding:15px 24px;white-space:nowrap;box-shadow:0 16px 30px -18px rgba(42,49,128,.9)">Agendar demo</a>
 <a href="#ventas" style="font:600 13.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(42,49,128,.16);border-radius:10px;padding:15px 24px;white-space:nowrap">Contactar a ventas</a>
@@ -805,11 +809,42 @@ SIN INTERVENCIÓN
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  componentDidMount() { this.motionTimer = setTimeout(this.initMotion, 120); }
+  componentDidMount() {
+    this.motionTimer = setTimeout(this.initMotion, 120);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.onScroll();
+  }
   componentWillUnmount() {
     if (this.rvSweep) { window.removeEventListener('scroll', this.rvSweep); window.removeEventListener('resize', this.rvSweep); }
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.progRaf) cancelAnimationFrame(this.progRaf);
     clearTimeout(this.motionTimer);
     if (this.io) this.io.disconnect();
+  }
+
+  /* Avance de lectura: 0 cuando el bloque del rol arranca bajo el submenú,
+     1 cuando su último renglón ya entró en pantalla. Se escribe directo al DOM
+     para no re-renderizar en cada scroll. */
+  onScroll = () => {
+    if (this.progRaf) return;
+    this.progRaf = requestAnimationFrame(() => { this.progRaf = 0; this.updateProg(); });
+  };
+
+  updateProg() {
+    const bar = document.querySelector('.subnav');
+    const body = document.querySelector('.rol-blocks');
+    const fill = document.getElementById('subnav-prog');
+    if (!bar || !body || !fill) return;
+    const r = body.getBoundingClientRect();
+    const top = (parseFloat(getComputedStyle(bar).top) || 0) + bar.offsetHeight;
+    /* Recorrido: del tope del bloque bajo la barra hasta que su ultima linea
+       entra en pantalla. Con piso de media pantalla: si el bloque apenas supera
+       el alto de la ventana ese tramo es minimo y la linea saltaria de golpe. */
+    const span = Math.max(r.height - (window.innerHeight - top), window.innerHeight * 0.5);
+    const p = Math.min(1, Math.max(0, (top - r.top) / span));
+    fill.style.transform = 'scaleX(' + p.toFixed(3) + ')';
   }
 
   initMotion = () => {
@@ -859,11 +894,14 @@ class Component extends DCLogic {
     const rol = e.currentTarget.dataset.rol;
     document.querySelectorAll('#roles-tabs button').forEach((b) => {
       const on = b.dataset.rol === rol;
-      b.style.background = on ? '#FFFFFF' : 'transparent';
-      b.style.color = on ? '#1A1A1A' : 'rgba(26,26,26,.7)';
+      b.style.borderBottomColor = on ? '#1A1A1A' : 'transparent';
+      b.style.color = on ? '#1A1A1A' : 'rgba(26,26,26,.42)';
       b.style.fontWeight = on ? '600' : '500';
-      b.style.boxShadow = on ? '0 2px 8px -4px rgba(26,26,26,.45)' : 'none';
     });
+    /* Sólo el scroll horizontal del carrusel de pestañas: scrollIntoView
+       movería también la página y pisaría el scroll de scrollAlInicio. */
+    const cont = e.currentTarget.parentElement;
+    cont.scrollTo({ left: Math.max(0, e.currentTarget.offsetLeft - (cont.clientWidth - e.currentTarget.offsetWidth) / 2), behavior: 'smooth' });
     this.setState({ rol });
     this.scrollToRol();
   };
@@ -879,6 +917,7 @@ class Component extends DCLogic {
       const y = window.scrollY + block.getBoundingClientRect().top - stickyTop - bar.offsetHeight - 12;
       const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       window.scrollTo({ top: Math.max(0, y), behavior: quieto ? 'auto' : 'smooth' });
+      this.updateProg();
     });
   };
 

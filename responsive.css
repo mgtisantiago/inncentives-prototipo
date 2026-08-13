@@ -60,6 +60,36 @@
   #page-root .lead{font-size:16px !important;line-height:1.6 !important}
 }
 
+/* Banda CTA de cierre (.cta-card + .cta-title + .cta-actions).
+   El titular es de escala hero (46-64px), así que no puede caer al escalón
+   genérico de h3 (20px en tablet): lleva clase propia para ganarle en
+   especificidad y baja en su propia escala. La caja siempre ocupa el 100%
+   del ancho de contenido; en pantallas chicas se le recorta el padding y el
+   radio para que no se coma el gutter de la página.
+
+   El fondo vive aquí y no en el style inline de cada página: es la misma
+   banda repetida en cinco plantillas y sólo cambia por breakpoint. En
+   teléfono pierde el tono crema y se funde con el blanco de la página, para
+   no dejar un bloque de color pegado al footer en pantallas angostas. */
+#page-root .cta-card{width:100% !important;box-sizing:border-box;background:#FAF8F5}
+@media (max-width: 1023px){
+  #page-root .cta-title{font-size:38px !important;line-height:1.16 !important}
+  #page-root .cta-card{padding:52px 32px !important;border-radius:16px !important;gap:26px !important}
+}
+@media (max-width: 767px){
+  #page-root .cta-title{font-size:30px !important;line-height:1.2 !important;letter-spacing:-.02em !important}
+  #page-root .cta-card{padding:40px 24px !important;gap:22px !important;background:#FFFFFF}
+  /* Formulario de la banda (newsletter en recursos): el campo es de 320px
+     fijos, que sumado a los gutters desborda un teléfono de 390px. En columna
+     y a ancho completo queda igual que la botonera de las demás bandas. */
+  #page-root .cta-form{flex-direction:column !important;align-items:stretch !important;width:100% !important;gap:12px !important}
+  #page-root .cta-form > div{width:100% !important}
+}
+@media (max-width: 479px){
+  #page-root .cta-title{font-size:26px !important}
+  #page-root .cta-card{padding:32px 20px !important;border-radius:14px !important}
+}
+
 /* split heroes */
 /* Cualquier fila partida con hijos de ancho fijo pasa a columna en tablet. */
 @media (max-width: 1279px){
@@ -100,11 +130,16 @@
 }
 @media (max-width: 1023px){
   #page-root .rol-canvas{zoom:.62}
-  #page-root .roles-sticky{top:74px}
+  /* El submenú se pega justo bajo el header ya encogido (70px desde tablet,
+     68px en teléfono). !important porque el top va en el style inline. */
+  #page-root .roles-sticky,#page-root .subnav{top:70px !important}
   #page-root .rol-head{flex-direction:column !important;align-items:flex-start !important;gap:14px !important}
 }
 @media (max-width: 767px){
-  #page-root .roles-sticky{top:74px}
+  #page-root .roles-sticky,#page-root .subnav{top:68px !important}
+  /* Pestañas del submenú: un punto menos y menos aire entre ellas en teléfono. */
+  #page-root .subnav button{font-size:14px !important;padding-top:11px !important;padding-bottom:9px !important}
+  #page-root .subnav > div:first-child{gap:20px !important}
   #page-root .rol-stage{display:none !important}
   #page-root .rol-stack{display:flex !important}
   #page-root .rol-block{gap:22px !important}
