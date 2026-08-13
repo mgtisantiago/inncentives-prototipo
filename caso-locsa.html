@@ -18,6 +18,9 @@ body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',system-ui,sans-seri
    !important porque los encabezados traen la familia en el shorthand `font:` inline. */
 h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk','IBM Plex Sans',system-ui,sans-serif !important}
 a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
+/* Los enlaces a otro .html no llevan style inline: Netlify (Pretty URLs) reescribe
+   esa etiqueta y al re-serializarla rompe las comillas del nombre de la fuente. */
+.bc-link{font:400 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.55)}
 </style></helmet>
 
 <div id="page-root" style="position: relative; min-height: 100vh; background: #FFFFFF; font-family: 'IBM Plex Sans',sans-serif; display: flex; flex-direction: column; width: 1440px; max-width: 100%; margin: 0 auto">
@@ -27,7 +30,7 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <section id="encabezado" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:34px 128px 0;display:flex;flex-direction:column;gap:26px">
 <nav style="display:flex;align-items:center;gap:9px">
-<a href="casos-de-exito.html" style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.55)">Casos de éxito<br></a>
+<a href="casos-de-exito.html" class="bc-link">Casos de éxito<br></a>
 <span style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.35)">›</span>
 <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A">Grupo Locsa</span>
 </nav>

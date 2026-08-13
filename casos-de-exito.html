@@ -18,6 +18,9 @@ body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',system-ui,sans-seri
    !important porque los encabezados traen la familia en el shorthand `font:` inline. */
 h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk','IBM Plex Sans',system-ui,sans-serif !important}
 a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
+/* Los enlaces a otro .html no llevan style inline: Netlify (Pretty URLs) reescribe
+   esa etiqueta y al re-serializarla rompe las comillas del nombre de la fuente. */
+.case-btn{font:600 12.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(255,255,255,.34);border-radius:8px;padding:11px 16px;transition:background .2s ease}
 /* page responsive */
 @media (max-width: 1023px){
   #grid > article[style*="span 2"]{grid-column:span 2 !important;grid-template-columns:minmax(0,1fr) !important}
@@ -67,7 +70,7 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 </div>
 <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
 <p style="margin:0;font:500 20px/1.4 'IBM Plex Sans',sans-serif;color:#FFFFFF;max-width:300px;text-wrap:pretty">Compensación variable completamente automatizada, de punta a punta</p>
-<a href="caso-locsa.html" style="font:600 12.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(255,255,255,.34);border-radius:8px;padding:11px 16px;transition:background .2s ease">Leer caso</a>
+<a href="caso-locsa.html" class="case-btn">Leer caso</a>
 </div>
 </div>
 </article>

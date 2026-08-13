@@ -44,6 +44,9 @@ html{overflow-x:clip}
   #page-root .case-stat{flex-direction:column !important;align-items:center !important;gap:6px !important}
 }
 a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
+/* Los enlaces a otro .html no llevan style inline: Netlify (Pretty URLs) reescribe
+   esa etiqueta y al re-serializarla rompe las comillas del nombre de la fuente. */
+.case-cta{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 16px;border-radius:10px;background:#FFFFFF;border:1px solid #E5E5E5;box-shadow:0 1px 2px rgba(0,0,0,.1);font:500 14px/1 'IBM Plex Sans',sans-serif;color:#2A3180;text-decoration:none;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease}
 @keyframes counterSpin{to{transform:rotate(-360deg)}}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(calc(-1096px))}}
 @keyframes tick{to{transform:rotate(360deg)}}
@@ -1105,7 +1108,7 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <p class="case-quote" style="margin:0 0 24px;font:400 24px/1.35 'IBM Plex Sans',sans-serif;color:#0A0A0A;text-wrap:pretty">“Grupo Locsa reemplazó procesos manuales y hojas de cálculo por un modelo integral en Inncentives, con portales de visibilidad por rol y auditoría completa”</p>
 
-<a href="caso-locsa.html" style="align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 16px;border-radius:10px;background:#FFFFFF;border:1px solid #E5E5E5;box-shadow:0 1px 2px rgba(0,0,0,.1);font:500 14px/1 'IBM Plex Sans',sans-serif;color:#2A3180;text-decoration:none;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:translateY(-1px);box-shadow:0 6px 14px -4px rgba(10,12,45,.28)">Ver caso de éxito</a>
+<a href="caso-locsa.html" class="case-cta" style-hover="transform:translateY(-1px);box-shadow:0 6px 14px -4px rgba(10,12,45,.28)">Ver caso de éxito</a>
 </div>
 </article>
 </div>
