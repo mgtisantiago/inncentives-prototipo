@@ -170,7 +170,7 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 </div>
 
 <sc-if value="{{ isRevops }}" hint-placeholder-val="{{ true }}">
-<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;animation:rFade .4s ease-out">
+<div class="cdiag-lg" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;animation:rFade .4s ease-out">
 <svg class="cdiag" viewBox="0 0 696 508" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagrama: componentes, KPI y meta grupal se combinan en una regla de pago que corre sola cada cierre" style="width:100%;height:auto;max-height:100%;display:block">
 <rect x="6" y="66" width="204" height="66" rx="13" fill="#FFFFFF" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="26" y="92" style="font:600 10px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.45)">COMPONENTE</text><text x="26" y="116" style="font:600 16px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">Cuota base</text>
 <rect x="6" y="148" width="204" height="66" rx="13" fill="#FFFFFF" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="26" y="174" style="font:600 10px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.45)">KPI</text><text x="26" y="198" style="font:600 16px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">Margen ≥ 22 %</text>
@@ -201,10 +201,54 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <path d="M6 424 H690" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="6" y="456" style="font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.42)">PLANES ACTIVOS</text><text x="6" y="486" style="font:700 20px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">18 · ilimitados</text><text x="690" y="456" text-anchor="end" style="font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.42)">ÚLTIMO CÁLCULO</text><text x="690" y="486" text-anchor="end" style="font:700 20px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">hace 4 min</text>
 </svg>
 </div>
+<!-- Versión móvil del diagrama: el mismo contenido apilado, como en index.html. -->
+<div class="cdiag-sm" style="display:none">
+<div style="display:flex;flex-direction:column;gap:14px;animation:rFade .4s ease-out">
+
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">COMPONENTE</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Cuota base</span></div>
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">KPI</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Margen ≥ 22 %</span></div>
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">META GRUPAL</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Equipo Norte</span></div>
+</div>
+
+<div aria-hidden="true" style="width:2px;height:20px;flex:none;align-self:center;background:repeating-linear-gradient(180deg,#F59B1B 0 5px,transparent 5px 13px)"></div>
+
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px">
+<span style="font:600 11px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.13em;color:#2A3180">REGLA DE PAGO</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid rgba(42,49,128,.1);background:rgba(42,49,128,.06);color:rgba(26,26,26,.82);border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">SI logro &gt; 100 %</span>
+<span style="border:1px solid rgba(245,155,27,.4);background:rgba(245,155,27,.16);color:#8A5200;border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">× 1.4</span>
+<span style="border:1px solid rgba(42,49,128,.1);background:rgba(42,49,128,.06);color:rgba(26,26,26,.82);border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">tope 200 %</span>
+</div>
+<span style="font:400 12.5px/1.4 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.5)">Aplica a 4 grupos elegibles</span>
+</div>
+
+<div aria-hidden="true" style="width:2px;height:20px;flex:none;align-self:center;background:repeating-linear-gradient(180deg,#F59B1B 0 5px,transparent 5px 13px)"></div>
+
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:52px;height:52px;flex:none;border-radius:16px;background:#2A3180;display:flex;align-items:center;justify-content:center">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+</span>
+<span style="font:600 14px/1.35 'IBM Plex Sans',sans-serif;color:#1A1A1A;text-wrap:pretty">Corre solo cada cierre</span>
+</div>
+
+<div style="border-top:1px solid rgba(42,49,128,.12);padding-top:14px;display:flex;justify-content:space-between;gap:16px">
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+<span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.42)">PLANES ACTIVOS</span>
+<span style="font:700 17px/1.2 'IBM Plex Sans',sans-serif;color:#1A1A1A">18 · ilimitados</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0;text-align:right">
+<span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.42)">ÚLTIMO CÁLCULO</span>
+<span style="font:700 17px/1.2 'IBM Plex Sans',sans-serif;color:#1A1A1A">hace 4 min</span>
+</div>
+</div>
+
+</div>
+</div>
 </sc-if>
 
 <sc-if value="{{ isFinanzas }}" hint-placeholder-val="{{ false }}">
-<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;animation:rFade .4s ease-out">
+<div class="cdiag-lg" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;animation:rFade .4s ease-out">
 <svg class="cdiag" viewBox="0 0 696 508" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagrama: el origen, la regla y el ajuste quedan registrados en la traza del cálculo y salen a nómina sin reconciliar" style="width:100%;height:auto;max-height:100%;display:block">
 <rect x="6" y="66" width="204" height="66" rx="13" fill="#FFFFFF" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="26" y="92" style="font:600 10px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.45)">ORIGEN</text><text x="26" y="116" style="font:600 16px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">Venta en CRM</text>
 <rect x="6" y="148" width="204" height="66" rx="13" fill="#FFFFFF" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="26" y="174" style="font:600 10px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.45)">REGLA</text><text x="26" y="198" style="font:600 16px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">Cuota 92 %</text>
@@ -235,10 +279,54 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <path d="M6 424 H690" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="6" y="456" style="font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.42)">DIFERENCIAS</text><text x="6" y="486" style="font:700 20px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">0 manuales</text><text x="690" y="456" text-anchor="end" style="font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.42)">CIERRE</text><text x="690" y="486" text-anchor="end" style="font:700 20px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">3 min</text>
 </svg>
 </div>
+<!-- Versión móvil del diagrama: el mismo contenido apilado, como en index.html. -->
+<div class="cdiag-sm" style="display:none">
+<div style="display:flex;flex-direction:column;gap:14px;animation:rFade .4s ease-out">
+
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">ORIGEN</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Venta en CRM</span></div>
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">REGLA</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Cuota 92 %</span></div>
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">AJUSTE</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Acelerador × 1.4</span></div>
+</div>
+
+<div aria-hidden="true" style="width:2px;height:20px;flex:none;align-self:center;background:repeating-linear-gradient(180deg,#F59B1B 0 5px,transparent 5px 13px)"></div>
+
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px">
+<span style="font:600 11px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.13em;color:#2A3180">TRAZA DEL CÁLCULO</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid rgba(42,49,128,.1);background:rgba(42,49,128,.06);color:rgba(26,26,26,.82);border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">base 3 %</span>
+<span style="border:1px solid rgba(245,155,27,.4);background:rgba(245,155,27,.16);color:#8A5200;border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">× 1.4</span>
+<span style="border:1px solid rgba(42,49,128,.1);background:rgba(42,49,128,.06);color:rgba(26,26,26,.82);border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">+ spiff</span>
+</div>
+<span style="font:400 12.5px/1.4 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.5)">cada paso queda registrado</span>
+</div>
+
+<div aria-hidden="true" style="width:2px;height:20px;flex:none;align-self:center;background:repeating-linear-gradient(180deg,#F59B1B 0 5px,transparent 5px 13px)"></div>
+
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:52px;height:52px;flex:none;border-radius:16px;background:#2A3180;display:flex;align-items:center;justify-content:center">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+</span>
+<span style="font:600 14px/1.35 'IBM Plex Sans',sans-serif;color:#1A1A1A;text-wrap:pretty">Sale a nómina sin reconciliar</span>
+</div>
+
+<div style="border-top:1px solid rgba(42,49,128,.12);padding-top:14px;display:flex;justify-content:space-between;gap:16px">
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+<span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.42)">DIFERENCIAS</span>
+<span style="font:700 17px/1.2 'IBM Plex Sans',sans-serif;color:#1A1A1A">0 manuales</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0;text-align:right">
+<span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.42)">CIERRE</span>
+<span style="font:700 17px/1.2 'IBM Plex Sans',sans-serif;color:#1A1A1A">3 min</span>
+</div>
+</div>
+
+</div>
+</div>
 </sc-if>
 
 <sc-if value="{{ isVentas }}" hint-placeholder-val="{{ false }}">
-<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;animation:rFade .4s ease-out">
+<div class="cdiag-lg" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;animation:rFade .4s ease-out">
 <svg class="cdiag" viewBox="0 0 696 508" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagrama: la venta, la cuota y el spiff forman mi número del día, sin esperar el cierre de mes" style="width:100%;height:auto;max-height:100%;display:block">
 <rect x="6" y="66" width="204" height="66" rx="13" fill="#FFFFFF" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="26" y="92" style="font:600 10px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.45)">VENTA</text><text x="26" y="116" style="font:600 16px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">Contrato cerrado</text>
 <rect x="6" y="148" width="204" height="66" rx="13" fill="#FFFFFF" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="26" y="174" style="font:600 10px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.45)">CUOTA</text><text x="26" y="198" style="font:600 16px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">128 % de logro</text>
@@ -269,10 +357,54 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <path d="M6 424 H690" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="6" y="456" style="font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.42)">CONSULTA</text><text x="6" y="486" style="font:700 20px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">cuando quieras</text><text x="690" y="456" text-anchor="end" style="font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.42)">DETALLE</text><text x="690" y="486" text-anchor="end" style="font:700 20px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">peso por peso</text>
 </svg>
 </div>
+<!-- Versión móvil del diagrama: el mismo contenido apilado, como en index.html. -->
+<div class="cdiag-sm" style="display:none">
+<div style="display:flex;flex-direction:column;gap:14px;animation:rFade .4s ease-out">
+
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">VENTA</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Contrato cerrado</span></div>
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">CUOTA</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">128 % de logro</span></div>
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">SPIFF</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Producto Premium</span></div>
+</div>
+
+<div aria-hidden="true" style="width:2px;height:20px;flex:none;align-self:center;background:repeating-linear-gradient(180deg,#F59B1B 0 5px,transparent 5px 13px)"></div>
+
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px">
+<span style="font:600 11px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.13em;color:#2A3180">MI NÚMERO HOY</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid rgba(42,49,128,.1);background:rgba(42,49,128,.06);color:rgba(26,26,26,.82);border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">logro 128 %</span>
+<span style="border:1px solid rgba(245,155,27,.4);background:rgba(245,155,27,.16);color:#8A5200;border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">× 1.4</span>
+<span style="border:1px solid rgba(42,49,128,.1);background:rgba(42,49,128,.06);color:rgba(26,26,26,.82);border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">spiff premium</span>
+</div>
+<span style="font:400 12.5px/1.4 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.5)">se actualiza cada día, no cada mes</span>
+</div>
+
+<div aria-hidden="true" style="width:2px;height:20px;flex:none;align-self:center;background:repeating-linear-gradient(180deg,#F59B1B 0 5px,transparent 5px 13px)"></div>
+
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:52px;height:52px;flex:none;border-radius:16px;background:#2A3180;display:flex;align-items:center;justify-content:center">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+</span>
+<span style="font:600 14px/1.35 'IBM Plex Sans',sans-serif;color:#1A1A1A;text-wrap:pretty">Sin esperar el cierre de mes</span>
+</div>
+
+<div style="border-top:1px solid rgba(42,49,128,.12);padding-top:14px;display:flex;justify-content:space-between;gap:16px">
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+<span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.42)">CONSULTA</span>
+<span style="font:700 17px/1.2 'IBM Plex Sans',sans-serif;color:#1A1A1A">cuando quieras</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0;text-align:right">
+<span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.42)">DETALLE</span>
+<span style="font:700 17px/1.2 'IBM Plex Sans',sans-serif;color:#1A1A1A">peso por peso</span>
+</div>
+</div>
+
+</div>
+</div>
 </sc-if>
 
 <sc-if value="{{ isRrhh }}" hint-placeholder-val="{{ false }}">
-<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;animation:rFade .4s ease-out">
+<div class="cdiag-lg" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;animation:rFade .4s ease-out">
 <svg class="cdiag" viewBox="0 0 696 508" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagrama: varias empresas comparten una misma política de pago y un solo reporte de cumplimiento" style="width:100%;height:auto;max-height:100%;display:block">
 <rect x="6" y="66" width="204" height="66" rx="13" fill="#FFFFFF" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="26" y="92" style="font:600 10px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.45)">EMPRESA</text><text x="26" y="116" style="font:600 16px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">México</text>
 <rect x="6" y="148" width="204" height="66" rx="13" fill="#FFFFFF" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="26" y="174" style="font:600 10px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.45)">EMPRESA</text><text x="26" y="198" style="font:600 16px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">Colombia</text>
@@ -302,6 +434,50 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <path d="M6 424 H690" stroke="rgba(42,49,128,.12)" stroke-width="1.5"/><text x="6" y="456" style="font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.42)">EMPRESAS</text><text x="6" y="486" style="font:700 20px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">6 · un solo modelo</text><text x="690" y="456" text-anchor="end" style="font:600 10.5px 'IBM Plex Sans',sans-serif;letter-spacing:.11em;fill:rgba(26,26,26,.42)">REPORTE</text><text x="690" y="486" text-anchor="end" style="font:700 20px 'IBM Plex Sans',sans-serif;fill:#1A1A1A">mensual, automático</text>
 </svg>
+</div>
+<!-- Versión móvil del diagrama: el mismo contenido apilado, como en index.html. -->
+<div class="cdiag-sm" style="display:none">
+<div style="display:flex;flex-direction:column;gap:14px;animation:rFade .4s ease-out">
+
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">EMPRESA</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">México</span></div>
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">EMPRESA</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Colombia</span></div>
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.45)">EMPRESA</span><span style="font:600 15px/1.3 'IBM Plex Sans',sans-serif;color:#1A1A1A">Brasil</span></div>
+</div>
+
+<div aria-hidden="true" style="width:2px;height:20px;flex:none;align-self:center;background:repeating-linear-gradient(180deg,#F59B1B 0 5px,transparent 5px 13px)"></div>
+
+<div style="background:#FFFFFF;border:1px solid rgba(42,49,128,.12);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px">
+<span style="font:600 11px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.13em;color:#2A3180">MISMA POLÍTICA DE PAGO</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="border:1px solid rgba(42,49,128,.1);background:rgba(42,49,128,.06);color:rgba(26,26,26,.82);border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">mismas reglas</span>
+<span style="border:1px solid rgba(245,155,27,.4);background:rgba(245,155,27,.16);color:#8A5200;border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">3 idiomas</span>
+<span style="border:1px solid rgba(42,49,128,.1);background:rgba(42,49,128,.06);color:rgba(26,26,26,.82);border-radius:10px;padding:7px 12px;font:600 13px/1 'IBM Plex Sans',sans-serif">3 monedas</span>
+</div>
+<span style="font:400 12.5px/1.4 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.5)">una sola definición para todos</span>
+</div>
+
+<div aria-hidden="true" style="width:2px;height:20px;flex:none;align-self:center;background:repeating-linear-gradient(180deg,#F59B1B 0 5px,transparent 5px 13px)"></div>
+
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:52px;height:52px;flex:none;border-radius:16px;background:#2A3180;display:flex;align-items:center;justify-content:center">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+</span>
+<span style="font:600 14px/1.35 'IBM Plex Sans',sans-serif;color:#1A1A1A;text-wrap:pretty">Un solo reporte de cumplimiento</span>
+</div>
+
+<div style="border-top:1px solid rgba(42,49,128,.12);padding-top:14px;display:flex;justify-content:space-between;gap:16px">
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+<span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.42)">EMPRESAS</span>
+<span style="font:700 17px/1.2 'IBM Plex Sans',sans-serif;color:#1A1A1A">6 · un solo modelo</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0;text-align:right">
+<span style="font:600 10px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:.11em;color:rgba(26,26,26,.42)">REPORTE</span>
+<span style="font:700 17px/1.2 'IBM Plex Sans',sans-serif;color:#1A1A1A">mensual, automático</span>
+</div>
+</div>
+
+</div>
 </div>
 </sc-if>
 </div>

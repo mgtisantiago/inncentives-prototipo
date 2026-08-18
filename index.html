@@ -22,6 +22,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk','IBM Plex Sans',system-ui,sans-ser
 html{overflow-x:clip}
 .bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
 /* Tarjeta del caso de éxito: alto fijo en escritorio, refluye hacia abajo. */
+/* Las cifras no miden lo mismo ("98%" es más corta que "100%" o "5→1"), así que
+   la caja de la cifra lleva un ancho mínimo y las descripciones arrancan todas
+   en la misma vertical. */
+#page-root .case-num{min-width:175px}
 @media (max-width:1023px){
   #page-root .case-card{min-height:0 !important;}
   #page-root .case-logo{margin-bottom:48px !important}
@@ -29,7 +33,7 @@ html{overflow-x:clip}
 }
 @media (max-width:767px){
   #page-root .case-card{padding:40px 0 !important}
-  #page-root .case-num{font-size:44px !important}
+  #page-root .case-num{font-size:44px !important;min-width:130px}
   #page-root .case-quote{font-size:19px !important}
   /* En teléfono la tarjeta se centra por completo: en una sola columna el eje
      izquierdo deja la cifra suelta y el botón huérfano contra el borde.
@@ -41,7 +45,9 @@ html{overflow-x:clip}
   #page-root .case-inner > a{align-self:center !important}
 }
 @media (max-width:599px){
+  /* Apiladas ya no hay columna que alinear: la cifra vuelve a ocupar lo suyo. */
   #page-root .case-stat{flex-direction:column !important;align-items:center !important;gap:6px !important}
+  #page-root .case-num{min-width:0}
 }
 a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 /* Los enlaces a otro .html no llevan style inline: Netlify (Pretty URLs) reescribe

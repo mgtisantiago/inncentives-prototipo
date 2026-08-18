@@ -21,6 +21,40 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 /* Los enlaces a otro .html no llevan style inline: Netlify (Pretty URLs) reescribe
    esa etiqueta y al re-serializarla rompe las comillas del nombre de la fuente. */
 .bc-link{font:400 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.55)}
+/* Encabezado del caso: centrado en teléfono (como el resto de los heros del
+   sitio) y alineado a la izquierda desde tableta. Ahí el bajante va en una
+   sola línea: se le quita el tope de 800px y la tipografía baja con el ancho
+   de la ventana (2.17vw) hasta los 26px de escritorio, que es lo que hace que
+   quepa entero sin partirse ni desbordar el gutter. */
+@media (min-width:768px){
+  #page-root .caso-head{align-items:flex-start !important;text-align:left !important}
+  #page-root .caso-sub{
+    max-width:none !important;
+    font-size:clamp(17px, 2.17vw, 26px) !important;
+    white-space:nowrap;
+    text-wrap:nowrap;
+  }
+}
+/* Cifras del caso, mismos cortes que index.html: el aire baja en tableta, la
+   cifra encoge y se centra en teléfono y, por debajo de 599px, cifra y texto
+   se apilan para que ninguno de los dos quede espachurrado. */
+/* Las cifras no miden lo mismo ("98%" es más corta que "100%" o "5 → 1"), así
+   que la caja de la cifra lleva un ancho mínimo: los rótulos y las
+   descripciones arrancan todos en la misma vertical. */
+#page-root .case-num{min-width:175px}
+@media (max-width:1023px){
+  #page-root .case-stats{gap:36px !important}
+}
+@media (max-width:767px){
+  #page-root .case-num{font-size:44px !important;min-width:130px}
+  #page-root .case-stat{justify-content:center !important;text-align:center}
+  #page-root .case-stat-txt{align-items:center !important}
+}
+@media (max-width:599px){
+  /* Apiladas ya no hay columna que alinear: la cifra vuelve a ocupar lo suyo. */
+  #page-root .case-stat{flex-direction:column !important;align-items:center !important;gap:6px !important}
+  #page-root .case-num{min-width:0}
+}
 </style></helmet>
 
 <div id="page-root" style="position: relative; min-height: 100vh; background: #FFFFFF; font-family: 'IBM Plex Sans',sans-serif; display: flex; flex-direction: column; width: 1440px; max-width: 100%; margin: 0 auto">
@@ -34,29 +68,38 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 <span style="font:400 13px/1 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.35)">›</span>
 <span style="font:500 13px/1 'IBM Plex Sans',sans-serif;color:#1A1A1A">Grupo Locsa</span>
 </nav>
-<div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+<div class="caso-head" style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
 <h1 style="margin:0;font:800 62px/1.06 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#1A1A1A">Grupo Locsa</h1>
-<p style="margin:0;max-width:800px;font:500 26px/1.4 'IBM Plex Sans',sans-serif;color:#1A1A1A;text-wrap:balance">Compensación variable completamente automatizada, de punta a punta</p>
+<p class="caso-sub" style="margin:0;max-width:800px;font:500 26px/1.4 'IBM Plex Sans',sans-serif;color:#1A1A1A;text-wrap:balance">Compensación variable completamente automatizada, de punta a punta</p>
 <span style="font:400 14px/1.5 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.6)">Seguridad y vigilancia · 5,000+ colaboradores</span>
 </div>
 </section>
 
 <section id="metricas" style="position:relative;max-width:1440px;margin:0 auto;width:100%;box-sizing:border-box;padding:44px 128px 0">
-<div class="g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid rgba(26,26,26,.1);border-radius:16px;overflow:hidden;background:#FFFFFF">
-<div style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:34px 28px;box-sizing:border-box;border-right:1px solid rgba(26,26,26,.1)">
+<!-- Cifras del caso: mismo bloque .case-stats de index.html (una fila por
+     cifra) en lugar de una rejilla de tres columnas con separadores, que en
+     teléfono dejaba los bordes sueltos y las cifras apretadas. -->
+<div class="case-stats" style="display:flex;flex-direction:column;gap:48px">
+<div class="case-stat" style="display:flex;align-items:center;gap:38px">
+<span class="case-num" style="font:700 60px/1 'IBM Plex Sans',sans-serif;color:#0A0A0A;flex:none">98%</span>
+<div class="case-stat-txt" style="display:flex;flex-direction:column;gap:7px;min-width:0">
 <span style="font:700 12px/1 'IBM Plex Sans',sans-serif;letter-spacing:.06em;color:#F59B1B">OPTIMIZACIÓN</span>
-<span style="font:800 54px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#1A1A1A">98%</span>
-<span style="font:400 13px/1.5 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.66);text-align:center;max-width:230px">Reducción de errores en los planes de compensación</span>
+<span style="font:400 18px/1.4 'IBM Plex Sans',sans-serif;color:#0A0A0A;text-wrap:pretty">Reducción de errores en los planes de compensación</span>
 </div>
-<div style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:34px 28px;box-sizing:border-box;border-right:1px solid rgba(26,26,26,.1)">
+</div>
+<div class="case-stat" style="display:flex;align-items:center;gap:38px">
+<span class="case-num" style="font:700 60px/1 'IBM Plex Sans',sans-serif;color:#0A0A0A;flex:none">100%</span>
+<div class="case-stat-txt" style="display:flex;flex-direction:column;gap:7px;min-width:0">
 <span style="font:700 12px/1 'IBM Plex Sans',sans-serif;letter-spacing:.06em;color:#F59B1B">TRAZABILIDAD</span>
-<span style="font:800 54px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#1A1A1A">100%</span>
-<span style="font:400 13px/1.5 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.66);text-align:center;max-width:230px">De los pagos, con auditoría completa</span>
+<span style="font:400 18px/1.4 'IBM Plex Sans',sans-serif;color:#0A0A0A;text-wrap:pretty">De los pagos, con auditoría completa</span>
 </div>
-<div style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:34px 28px;box-sizing:border-box">
+</div>
+<div class="case-stat" style="display:flex;align-items:center;gap:38px">
+<span class="case-num" style="font:700 60px/1 'IBM Plex Sans',sans-serif;color:#0A0A0A;flex:none">5 → 1</span>
+<div class="case-stat-txt" style="display:flex;flex-direction:column;gap:7px;min-width:0">
 <span style="font:700 12px/1 'IBM Plex Sans',sans-serif;letter-spacing:.06em;color:#F59B1B">AGILIDAD</span>
-<span style="font:800 54px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#1A1A1A">5 → 1</span>
-<span style="font:400 13px/1.5 'IBM Plex Sans',sans-serif;color:rgba(26,26,26,.66);text-align:center;max-width:230px">Días para el cierre mensual de comisiones</span>
+<span style="font:400 18px/1.4 'IBM Plex Sans',sans-serif;color:#0A0A0A;text-wrap:pretty">Días para el cierre mensual de comisiones</span>
+</div>
 </div>
 </div>
 </section>

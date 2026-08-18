@@ -21,14 +21,36 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 /* Los enlaces a otro .html no llevan style inline: Netlify (Pretty URLs) reescribe
    esa etiqueta y al re-serializarla rompe las comillas del nombre de la fuente. */
 .case-btn{font:600 12.5px/1 'IBM Plex Sans',sans-serif;color:#2A3180;background:#FFFFFF;border:1px solid rgba(255,255,255,.34);border-radius:8px;padding:11px 16px;transition:background .2s ease}
+/* Tamano de las tarjetas. La placa del logo traia 264px fijos y la destacada
+   432px de alto minimo para cualquier ancho: al colapsar la rejilla a dos y a
+   una columna la tarjeta se ensancha pero el alto no baja, y quedan piezas
+   desproporcionadas. Aqui el alto va por dispositivo, como el resto del sitio. */
+#page-root .caso-media{height:224px !important}
+#page-root .caso-feat{min-height:392px !important}
+
 /* page responsive */
 @media (max-width: 1023px){
   #grid > article[style*="span 2"]{grid-column:span 2 !important;grid-template-columns:minmax(0,1fr) !important}
   #grid > article[style*="span 2"] > div:last-child{padding:28px !important}
   #filtros{max-width:100%;overflow-x:auto;scrollbar-width:none}
+  #grid{gap:20px !important}
+  #page-root .caso-media{height:196px !important}
+  /* Apilada (logo arriba, texto abajo) ya no necesita alto minimo: el contenido
+     manda y el bloque del logo se queda en una banda de proporcion normal. */
+  #page-root .caso-feat{min-height:0 !important}
+  #page-root .caso-feat > div:first-child{height:196px;padding:28px !important}
 }
 @media (max-width: 767px){
   #grid > article[style*="span 2"]{grid-column:span 1 !important}
+  /* En una sola columna la tarjeta no debe estirarse a todo el ancho de la
+     pantalla: 420px es el ancho estandar de tarjeta en telefono y tablet
+     pequena, centrado dentro de la columna. */
+  #grid > article{max-width:420px;width:100%;margin-left:auto;margin-right:auto}
+  #page-root .caso-media{height:172px !important}
+  #page-root .caso-feat > div:first-child{height:172px;padding:24px !important}
+  #page-root .caso-feat > div:last-child{padding:24px !important;gap:20px !important}
+  #page-root .caso-num{font-size:40px !important}
+  #page-root .caso-feat p{font-size:17px !important}
 }
 </style></helmet>
 
@@ -59,13 +81,13 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 
 <div id="grid" class="g3" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start">
 
-<article data-cat="seguridad" onClick="{{ openLocsa }}" style="grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;background:#121212;min-height:432px;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 26px 50px -30px rgba(18,18,18,.85)">
+<article data-cat="seguridad" class="caso-feat" onClick="{{ openLocsa }}" style="grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;background:#121212;min-height:432px;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 26px 50px -30px rgba(18,18,18,.85)">
 <div style="display:flex;align-items:center;justify-content:center;padding:40px;box-sizing:border-box;background:#121212">
 <img src="assets/cliente-locsa.svg" alt="LOCSA" style="width:100%;max-width:210px;height:auto;display:block;filter:brightness(0) invert(1)">
 </div>
 <div style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:40px 40px 40px 32px;box-sizing:border-box;background:#1A1A1A">
 <div style="display:flex;flex-direction:column;gap:6px">
-<span style="font:800 54px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#FFFFFF">500K+</span>
+<span class="caso-num" style="font:800 54px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;color:#FFFFFF">500K+</span>
 <span style="font:500 13px/1.4 'IBM Plex Sans',sans-serif;color:rgba(255,255,255,.62)">Colaboradores</span>
 </div>
 <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
@@ -75,8 +97,8 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 </div>
 </article>
 
-<article data-cat="retail" style="display:flex;flex-direction:column;gap:16px">
-<div style="height:264px;border-radius:20px;background:#A93A85;display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden">
+<article data-cat="retail" class="caso-card" style="display:flex;flex-direction:column;gap:16px">
+<div class="caso-media" style="height:264px;border-radius:20px;background:#A93A85;display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden">
 <img src="assets/cliente-liverpool.svg" alt="Liverpool" style="width:100%;height:100%;max-width:none;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
@@ -86,8 +108,8 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 </div>
 </article>
 
-<article data-cat="manufactura" style="display:flex;flex-direction:column;gap:16px">
-<div style="height:264px;border-radius:20px;background:#EE1C25;display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden">
+<article data-cat="manufactura" class="caso-card" style="display:flex;flex-direction:column;gap:16px">
+<div class="caso-media" style="height:264px;border-radius:20px;background:#EE1C25;display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden">
 <img src="assets/cliente-cocacola.svg" alt="Coca-Cola" style="width:100%;height:100%;max-width:none;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
@@ -97,8 +119,8 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 </div>
 </article>
 
-<article data-cat="tecnologia" style="display:flex;flex-direction:column;gap:16px">
-<div style="height:264px;border-radius:20px;background:#EB0029;display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden">
+<article data-cat="tecnologia" class="caso-card" style="display:flex;flex-direction:column;gap:16px">
+<div class="caso-media" style="height:264px;border-radius:20px;background:#EB0029;display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden">
 <img src="assets/cliente-banorte.svg" alt="Banorte" style="width:100%;height:100%;max-width:none;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
@@ -108,8 +130,8 @@ a{color:#2A3180;text-decoration:none}a:hover{color:#1d2360}
 </div>
 </article>
 
-<article data-cat="retail" style="display:flex;flex-direction:column;gap:16px">
-<div style="height:264px;border-radius:20px;background:#E4002B;display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden">
+<article data-cat="retail" class="caso-card" style="display:flex;flex-direction:column;gap:16px">
+<div class="caso-media" style="height:264px;border-radius:20px;background:#E4002B;display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden">
 <img src="assets/cliente-oxxo.svg" alt="OXXO" style="width:100%;height:100%;max-width:none;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">

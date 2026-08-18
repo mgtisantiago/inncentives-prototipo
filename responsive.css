@@ -144,3 +144,13 @@
   #page-root .rol-stack{display:flex !important}
   #page-root .rol-block{gap:22px !important}
 }
+
+/* Diagramas de rol de soluciones.html. El SVG (.cdiag) es una composición
+   horizontal de 696x508: en tableta y escritorio se lee bien, pero al ancho
+   de un teléfono su tipografía queda por debajo de los 8px reales. Por eso
+   a partir de 767px se cambia por la misma versión apilada en HTML que usa
+   index.html en su sección de roles (.cdiag-sm). */
+@media (max-width: 767px){
+  #page-root .cdiag-lg{display:none !important}
+  #page-root .cdiag-sm{display:block !important}
+}
