@@ -194,3 +194,15 @@
   if (!customElements.get('site-header')) customElements.define('site-header', SiteHeader);
   if (!customElements.get('site-footer')) customElements.define('site-footer', SiteFooter);
 })();
+
+/* Chat de soporte (Tidio). Va aquí porque site-chrome.js ya se carga en todas
+   las páginas. Se inyecta con https: explícito: el // del snippet original
+   apuntaría a file://code.tidio.co al abrir el sitio exportado en local. */
+(() => {
+  if (location.protocol === 'file:') return;
+  if (document.querySelector('script[src*="code.tidio.co"]')) return;
+  const s = document.createElement('script');
+  s.src = 'https://code.tidio.co/4ujmtpx0mgjliuae8lh0jb3f34nudf5y.js';
+  s.async = true;
+  document.head.appendChild(s);
+})();
