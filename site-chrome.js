@@ -206,3 +206,17 @@
   s.async = true;
   document.head.appendChild(s);
 })();
+
+/* Analítica de comportamiento (Microsoft Clarity): mapas de calor, clics y
+   grabaciones de sesión para revisar el prototipo con el equipo. Mismo lugar y
+   misma guarda que Tidio: no debe dispararse al abrir el sitio en local. */
+(() => {
+  if (location.protocol === 'file:') return;
+  if (document.querySelector('script[src*="clarity.ms"]')) return;
+  const id = 'y9lhzq1u97';
+  window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+  const s = document.createElement('script');
+  s.src = 'https://www.clarity.ms/tag/' + id;
+  s.async = true;
+  document.head.appendChild(s);
+})();
